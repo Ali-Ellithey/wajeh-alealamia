@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Container, Row, Col, Card, Button, Badge } from "react-bootstrap";
 import {
   FaWhatsapp,
@@ -12,338 +12,382 @@ import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 
 import HomeSidler from "@/Components/Home/HomeSidler";
-
-// ── Dodge Charger ─────────────────────────────────────
 import dodgecharger_Black from "@/assets/SportsCars/dodgecharger-Black.webp";
 import dodgecharger_Gray from "@/assets/SportsCars/dodgecharger-Gray.webp";
 import dodgecharger_White from "@/assets/SportsCars/dodgecharger-white.webp";
-
-// ── Fiat 500X ─────────────────────────────────────────
-import fiat500x_Black from "@/assets/SportsCars/fiat500x-black.webp";
-import fiat500x_Blue from "@/assets/SportsCars/fiat500x-blue.webp";
-import fiat500x_White from "@/assets/SportsCars/fiat500x-white.webp";
-
-// ── Fiat 500 ──────────────────────────────────────────
 import fiat500 from "@/assets/SportsCars/fiat500.webp";
 import fiat500_Black from "@/assets/SportsCars/fiat500-black.webp";
 import fiat500_White from "@/assets/SportsCars/fiat500-white.webp";
-
-// ── Suzuki Jimny ──────────────────────────────────────
 import suzukiJimny_Silver from "@/assets/SportsCars/suzukijimny-Salver.webp";
 import suzukiJimny_Gray from "@/assets/SportsCars/suzukijimny-Gray.webp";
 import suzukiJimny_Black from "@/assets/SportsCars/suzukijimny-Black.webp";
-
-// ── Chevrolet Corvette ────────────────────────────────
 import chevroletCorvette_Blue from "@/assets/SportsCars/Chevrolet-Chevrolet-Blue.webp";
 import chevroletCorvette_Red from "@/assets/SportsCars/Chevrolet-Chevrolet-Rade.webp";
-
-// ── Chevrolet Silverado ───────────────────────────────
 import chevroletSilverado_Black from "@/assets/SportsCars/ChevroletSilverado-Black.webp";
 import chevroletSilverado_Blue from "@/assets/SportsCars/ChevroletSilverado-Blua.webp";
-
-// ── Ferrari F8 Spider ─────────────────────────────────
 import ferrariF8Spider_Red from "@/assets/SportsCars/Ferrari_F8_Spider-Rade.webp";
 import ferrariF8Spider_White from "@/assets/SportsCars/Ferrari_F8_Spider-white.webp";
-
-// ── McLaren ───────────────────────────────────────────
 import mclaren from "@/assets/SportsCars/McLaren.webp";
-
-// ── Mini Cooper ───────────────────────────────────────
 import miniCooper_Black from "@/assets/SportsCars/minicooper-Black.webp";
 import miniCooper_Red from "@/assets/SportsCars/minicooper-Rade.webp";
 import miniCooper_White from "@/assets/SportsCars/minicooper-white.webp";
-
-// ── Ford Mustang ──────────────────────────────────────
 import mustang_Black from "@/assets/SportsCars/Mustang_Black.webp";
 import mustangDarkHorse_Black from "@/assets/SportsCars/Mustang_Dark_Horse-black.webp";
 import mustangDarkHorse_Blue from "@/assets/SportsCars/Mustang_Dark_Horse-blue.webp";
 import mustang_Gray from "@/assets/SportsCars/Mustang-Gray.webp";
 import mustang_Red from "@/assets/SportsCars/Mustang-Read.webp";
-
-// ── Porsche 911 Carrera ───────────────────────────────
 import porsche911_Black from "@/assets/SportsCars/porschecarrera911-Black.webp";
 import porsche911_Blue from "@/assets/SportsCars/porschecarrera911-Blue.webp";
 import porsche911_White from "@/assets/SportsCars/porschecarrera911-white.webp";
+import chrysler300_White from "@/assets/EconomyCars/Chrysler300-white.webp";
+import chrysler300_Black from "@/assets/EconomyCars/Chrysler300-black.webp";
+import chrysler300_Silver from "@/assets/EconomyCars/Chrysler300.webp";
 
+// ── خريطة الألوان ──────────────────────────────────────────
+const COLOR_MAP = {
+  أبيض: "#FFFFFF",
+  فضي: "#C0C0C0",
+  رمادي: "#808080",
+  أسود: "#1a1a1a",
+  أزرق: "#3b82f6",
+  أحمر: "#ef4444",
+  أصفر: "#facc15",
+  برتقالي: "#f97316",
+};
+
+// ── بيانات السيارات المجمّعة ────────────────────────────────
+const sportsCarsGrouped = [
+  {
+    id: "dodge-charger-2023",
+    name: "Dodge Charger",
+    year: "2023",
+    specs: { passengers: 5, transmission: "أتوماتيك", engine: "V6/V8" },
+    features: ["تصميم عضلي", "أداء قوي", "صوت عادم رياضي"],
+    minAge: 21,
+    variants: [
+      { color: "أسود", image: dodgecharger_Black },
+      { color: "رمادي", image: dodgecharger_Gray },
+      { color: "أبيض", image: dodgecharger_White },
+    ],
+  },
+  {
+    id: "fiat500c-2023",
+    name: "Fiat 500C",
+    year: "2023",
+    specs: { passengers: 4, transmission: "أتوماتيك", engine: "1.0 Hybrid" },
+    features: ["تصميم كلاسيكي", "خفيفة وسهلة القيادة", "اقتصادية جدًا"],
+    minAge: 21,
+    variants: [
+      { color: "أحمر", image: fiat500 },
+      { color: "أسود", image: fiat500_Black },
+      { color: "أبيض", image: fiat500_White },
+    ],
+  },
+  {
+    id: "suzuki-jimny-2025",
+    name: "Suzuki Jimny",
+    year: "2025",
+    specs: { passengers: 4, transmission: "أتوماتيك", engine: "1.5L" },
+    features: ["دفع رباعي حقيقي", "حجم مدمج", "مناسبة للطرق الوعرة"],
+    minAge: 21,
+    variants: [{ color: "فضي", image: suzukiJimny_Silver }],
+  },
+  {
+    id: "suzuki-jimny-2023",
+    name: "Suzuki Jimny",
+    year: "2023",
+    specs: { passengers: 4, transmission: "أتوماتيك", engine: "1.5L" },
+    features: ["دفع رباعي حقيقي", "حجم مدمج", "مناسبة للطرق الوعرة"],
+    minAge: 21,
+    variants: [
+      { color: "رمادي", image: suzukiJimny_Gray },
+      { color: "أسود", image: suzukiJimny_Black },
+    ],
+  },
+  {
+    id: "corvette-2024",
+    name: "Chevrolet Corvette",
+    year: "2024",
+    specs: { passengers: 2, transmission: "أتوماتيك", engine: "V8" },
+    features: ["تسارع فائق", "تصميم رياضي خالص", "مقصورة قيادة منخفضة"],
+    minAge: 25,
+    variants: [
+      { color: "أزرق", image: chevroletCorvette_Blue },
+      { color: "أحمر", image: chevroletCorvette_Red },
+    ],
+  },
+  {
+    id: "silverado-2023",
+    name: "Chevrolet Silverado",
+    year: "2023",
+    specs: { passengers: 5, transmission: "أتوماتيك", engine: "V8" },
+    features: ["قوة سحب عالية", "مساحة شحن واسعة", "دفع رباعي"],
+    minAge: 21,
+    variants: [{ color: "أسود", image: chevroletSilverado_Black }],
+  },
+  {
+    id: "silverado-2024",
+    name: "Chevrolet Silverado",
+    year: "2024",
+    specs: { passengers: 5, transmission: "أتوماتيك", engine: "V8" },
+    features: ["قوة سحب عالية", "مساحة شحن واسعة", "دفع رباعي"],
+    minAge: 21,
+    variants: [{ color: "أزرق", image: chevroletSilverado_Blue }],
+  },
+  {
+    id: "ferrari-f8-2021",
+    name: "Ferrari F8 Spider",
+    year: "2021",
+    specs: { passengers: 2, transmission: "أتوماتيك", engine: "V8" },
+    features: ["سقف مكشوف", "أداء خارق", "تصميم إيطالي فاخر"],
+    minAge: 25,
+    variants: [
+      { color: "أحمر", image: ferrariF8Spider_Red },
+      { color: "أبيض", image: ferrariF8Spider_White },
+    ],
+  },
+  {
+    id: "mclaren-2022",
+    name: "McLaren R2",
+    year: "2022",
+    specs: { passengers: 2, transmission: "أتوماتيك", engine: "V8" },
+    features: ["سوبر كار", "أداء سباقات", "تصميم مستقبلي"],
+    minAge: 25,
+    variants: [{ color: "برتقالي", image: mclaren }],
+  },
+  {
+    id: "mini-cooper-2023",
+    name: "Mini Cooper",
+    year: "2023",
+    specs: { passengers: 4, transmission: "أتوماتيك", engine: "4 سلندر" },
+    features: ["تصميم كلاسيكي", "سهل القيادة", "اقتصادي"],
+    minAge: 21,
+    variants: [
+      { color: "أسود", image: miniCooper_Black },
+      { color: "أحمر", image: miniCooper_Red },
+    ],
+  },
+  {
+    id: "mini-cooper-2025",
+    name: "Mini Cooper",
+    year: "2025",
+    specs: { passengers: 4, transmission: "أتوماتيك", engine: "4 سلندر" },
+    features: ["تصميم كلاسيكي", "سهل القيادة", "اقتصادي"],
+    minAge: 21,
+    variants: [{ color: "أبيض", image: miniCooper_White }],
+  },
+  {
+    id: "mustang-2023",
+    name: "Ford Mustang",
+    year: "2023",
+    specs: { passengers: 4, transmission: "أتوماتيك", engine: "V8" },
+    features: ["تصميم عضلي", "أداء قوي", "صوت عادم رياضي"],
+    minAge: 21,
+    variants: [
+      { color: "أسود", image: mustang_Black },
+      { color: "رمادي", image: mustang_Gray },
+      { color: "أحمر", image: mustang_Red },
+    ],
+  },
+  {
+    id: "mustang-dark-horse-2024",
+    name: "Ford Mustang Dark Horse",
+    year: "2024",
+    specs: { passengers: 4, transmission: "أتوماتيك", engine: "V8" },
+    features: ["إصدار محدود", "أداء متطور", "تصميم حصري"],
+    minAge: 21,
+    variants: [
+      { color: "أسود", image: mustangDarkHorse_Black },
+      { color: "أزرق", image: mustangDarkHorse_Blue },
+    ],
+  },
+  {
+    id: "porsche-911-2025",
+    name: "Porsche Carrera 911",
+    year: "2025",
+    specs: { passengers: 2, transmission: "أتوماتيك", engine: "6 سلندر" },
+    features: ["أيقونة السيارات الرياضية", "أداء ألماني دقيق", "تصميم خالد"],
+    minAge: 25,
+    variants: [{ color: "أسود", image: porsche911_Black }],
+  },
+  {
+    id: "porsche-911-2023",
+    name: "Porsche Carrera 911",
+    year: "2023",
+    specs: { passengers: 2, transmission: "أتوماتيك", engine: "6 سلندر" },
+    features: ["أيقونة السيارات الرياضية", "أداء ألماني دقيق", "تصميم خالد"],
+    minAge: 25,
+    variants: [{ color: "أزرق", image: porsche911_Blue }],
+  },
+  {
+    id: "porsche-911-2026",
+    name: "Porsche Carrera 911",
+    year: "2026",
+    specs: { passengers: 2, transmission: "أتوماتيك", engine: "6 سلندر" },
+    features: ["أيقونة السيارات الرياضية", "أداء ألماني دقيق", "تصميم خالد"],
+    minAge: 25,
+    variants: [{ color: "أبيض", image: porsche911_White }],
+  },
+  {
+    id: "chrysler300-2022",
+    name: "Chrysler 300",
+    year: "2022",
+    specs: { passengers: 5, transmission: "أتوماتيك", engine: "V6/V8" },
+    features: ["سيدان فارهة", "تصميم أمريكي كلاسيكي", "محرك قوي"],
+    minAge: 21,
+    variants: [
+      { color: "أبيض", image: chrysler300_White },
+      { color: "أسود", image: chrysler300_Black },
+      { color: "فضي", image: chrysler300_Silver },
+    ],
+  },
+];
+
+// ── كومبوننت الكارت الواحد ──────────────────────────────────
+const CarCard = ({ car }) => {
+  const [selectedVariant, setSelectedVariant] = useState(0);
+
+  return (
+    <Col xs={12} lg={6} xl={4}>
+      <motion.div whileHover={{ y: -10 }} transition={{ duration: 0.3 }}>
+        <Card className="shadow-sm border-0 h-100 car-card">
+          {/* ── صورة السيارة ── */}
+          <div
+            className="position-relative overflow-hidden"
+            style={{ height: "230px", background: "#f8f9fa" }}
+          >
+            <Badge
+              pill
+              className="position-absolute"
+              style={{
+                top: "15px",
+                right: "15px",
+                background: "#fc8b1a",
+                zIndex: 5,
+                padding: "8px 15px",
+              }}
+            >
+              موديل {car.year}
+            </Badge>
+            <motion.img
+              key={selectedVariant}
+              src={car.variants[selectedVariant].image}
+              alt={car.name}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.3 }}
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+                paddingBottom: "10px",
+              }}
+            />
+          </div>
+
+          <Card.Body className="p-4">
+            <Card.Title className="fw-bold fs-4 mb-2 text-center">
+              {car.name}
+            </Card.Title>
+
+            {/* ── بلت الألوان ── */}
+            {car.variants.length > 1 && (
+              <div className="d-flex justify-content-center align-items-center gap-2 mb-3 flex-wrap">
+                <span className="text-muted small ms-1">اللون:</span>
+                {car.variants.map((v, i) => (
+                  <button
+                    key={i}
+                    onClick={() => setSelectedVariant(i)}
+                    title={v.color}
+                    style={{
+                      width: "26px",
+                      height: "26px",
+                      borderRadius: "50%",
+                      backgroundColor: COLOR_MAP[v.color] || "#ccc",
+                      border:
+                        selectedVariant === i
+                          ? "3px solid #fc8b1a"
+                          : "2px solid #ccc",
+                      cursor: "pointer",
+                      transition: "all 0.2s",
+                      boxShadow:
+                        selectedVariant === i
+                          ? "0 0 0 2px #fff, 0 0 0 4px #fc8b1a"
+                          : "none",
+                      outline: "none",
+                      padding: 0,
+                    }}
+                  />
+                ))}
+                <span
+                  className="small fw-bold"
+                  style={{ color: "#fc8b1a", minWidth: "50px" }}
+                >
+                  {car.variants[selectedVariant].color}
+                </span>
+              </div>
+            )}
+
+            {/* ── مواصفات ── */}
+            <Row className="text-center g-0 bg-light rounded py-3 mb-3">
+              <Col xs={4} className="border-end">
+                <FaUsers color="#fc8b1a" className="mb-1" />
+                <div className="small fw-bold">{car.specs.passengers} ركاب</div>
+              </Col>
+              <Col xs={4} className="border-end">
+                <FaCogs color="#fc8b1a" className="mb-1" />
+                <div className="small fw-bold">{car.specs.transmission}</div>
+              </Col>
+              <Col xs={4}>
+                <FaGasPump color="#fc8b1a" className="mb-1" />
+                <div className="small fw-bold">{car.specs.engine}</div>
+              </Col>
+            </Row>
+
+            {/* ── مميزات ── */}
+            <div className="d-flex flex-wrap gap-2 justify-content-center mb-4">
+              {car.features.map((feature, idx) => (
+                <Badge
+                  key={idx}
+                  bg="white"
+                  text="dark"
+                  className="border font-weight-normal py-2 px-3"
+                >
+                  <FaCheckCircle className="text-warning me-1" /> {feature}
+                </Badge>
+              ))}
+            </div>
+
+            {/* ── الحد الأدنى للعمر ── */}
+            <div
+              className="age-limit-box text-center mb-3 py-2 border rounded"
+              style={{ color: "#d9534f" }}
+            >
+              <FaIdCard className="me-2" /> الحد الأدنى للعمر: {car.minAge} سنة
+            </div>
+
+            {/* ── زر واتساب ── */}
+            <Button
+              href={`https://wa.me/+96590930061?text=استفسار عن حجز: ${car.name} موديل ${car.year} - اللون ${car.variants[selectedVariant].color}`}
+              target="_blank"
+              className="whatsapp-btn w-100 border-0 py-3 fw-bold"
+            >
+              <FaWhatsapp size={22} className="me-2" /> احجز الآن عبر واتساب
+            </Button>
+          </Card.Body>
+        </Card>
+      </motion.div>
+    </Col>
+  );
+};
+
+// ── الكومبوننت الرئيسي ──────────────────────────────────────
 const SportsCarsDetails = () => {
   const { t } = useTranslation();
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
-  const sportsCars = [
-    {
-      id: 1,
-      name: "Dodge Charger",
-      image: dodgecharger_Black,
-      year: "2023",
-      specs: { passengers: 5, transmission: "أتوماتيك", engine: "V6/V8" },
-      features: ["تصميم عضلي", "أداء قوي", "صوت عادم رياضي"],
-      minAge: 21,
-    },
-    {
-      id: 2,
-      name: "Dodge Charger",
-      image: dodgecharger_Gray,
-      year: "2023",
-      specs: { passengers: 5, transmission: "أتوماتيك", engine: "V6/V8" },
-      features: ["تصميم عضلي", "أداء قوي", "صوت عادم رياضي"],
-      minAge: 21,
-    },
-    {
-      id: 3,
-      name: "Dodge Charger",
-      image: dodgecharger_White,
-      year: "2023",
-      specs: { passengers: 5, transmission: "أتوماتيك", engine: "V6/V8" },
-      features: ["تصميم عضلي", "أداء قوي", "صوت عادم رياضي"],
-      minAge: 21,
-    },
-    {
-      id: 4,
-      name: "Fiat 500X",
-      image: fiat500x_Black,
-      year: "2018",
-      specs: { passengers: 5, transmission: "أتوماتيك", engine: "1.4 Turbo" },
-      features: ["تصميم إيطالي", "حجم عملي", "اقتصادية في الاستهلاك"],
-      minAge: 21,
-    },
-    {
-      id: 5,
-      name: "Fiat 500X",
-      image: fiat500x_Blue,
-      year: "2018",
-      specs: { passengers: 5, transmission: "أتوماتيك", engine: "1.4 Turbo" },
-      features: ["تصميم إيطالي", "حجم عملي", "اقتصادية في الاستهلاك"],
-      minAge: 21,
-    },
-    {
-      id: 6,
-      name: "Fiat 500X",
-      image: fiat500x_White,
-      year: "2018",
-      specs: { passengers: 5, transmission: "أتوماتيك", engine: "1.4 Turbo" },
-      features: ["تصميم إيطالي", "حجم عملي", "اقتصادية في الاستهلاك"],
-      minAge: 21,
-    },
-    {
-      id: 7,
-      name: "Fiat 500",
-      image: fiat500,
-      year: "2023",
-      specs: { passengers: 4, transmission: "أتوماتيك", engine: "1.0 Hybrid" },
-      features: ["تصميم كلاسيكي", "خفيفة وسهلة القيادة", "اقتصادية جدًا"],
-      minAge: 21,
-    },
-    {
-      id: 8,
-      name: "Fiat 500",
-      image: fiat500_Black,
-      year: "2023",
-      specs: { passengers: 4, transmission: "أتوماتيك", engine: "1.0 Hybrid" },
-      features: ["تصميم كلاسيكي", "خفيفة وسهلة القيادة", "اقتصادية جدًا"],
-      minAge: 21,
-    },
-    {
-      id: 9,
-      name: "Fiat 500",
-      image: fiat500_White,
-      year: "2023",
-      specs: { passengers: 4, transmission: "أتوماتيك", engine: "1.0 Hybrid" },
-      features: ["تصميم كلاسيكي", "خفيفة وسهلة القيادة", "اقتصادية جدًا"],
-      minAge: 21,
-    },
-    {
-      id: 10,
-      name: "Suzuki Jimny",
-      image: suzukiJimny_Silver,
-      year: "2024",
-      specs: { passengers: 4, transmission: "أتوماتيك", engine: "1.5L" },
-      features: ["دفع رباعي حقيقي", "حجم مدمج", "مناسبة للطرق الوعرة"],
-      minAge: 21,
-    },
-    {
-      id: 11,
-      name: "Suzuki Jimny",
-      image: suzukiJimny_Gray,
-      year: "2024",
-      specs: { passengers: 4, transmission: "أتوماتيك", engine: "1.5L" },
-      features: ["دفع رباعي حقيقي", "حجم مدمج", "مناسبة للطرق الوعرة"],
-      minAge: 21,
-    },
-    {
-      id: 12,
-      name: "Suzuki Jimny",
-      image: suzukiJimny_Black,
-      year: "2024",
-      specs: { passengers: 4, transmission: "أتوماتيك", engine: "1.5L" },
-      features: ["دفع رباعي حقيقي", "حجم مدمج", "مناسبة للطرق الوعرة"],
-      minAge: 21,
-    },
-    {
-      id: 13,
-      name: "Chevrolet Corvette",
-      image: chevroletCorvette_Blue,
-      year: "2024",
-      specs: { passengers: 2, transmission: "أتوماتيك", engine: "V8" },
-      features: ["تسارع فائق", "تصميم رياضي خالص", "مقصورة قيادة منخفضة"],
-      minAge: 25,
-    },
-    {
-      id: 14,
-      name: "Chevrolet Corvette",
-      image: chevroletCorvette_Red,
-      year: "2024",
-      specs: { passengers: 2, transmission: "أتوماتيك", engine: "V8" },
-      features: ["تسارع فائق", "تصميم رياضي خالص", "مقصورة قيادة منخفضة"],
-      minAge: 25,
-    },
-    {
-      id: 15,
-      name: "Chevrolet Silverado",
-      image: chevroletSilverado_Black,
-      year: "2024",
-      specs: { passengers: 5, transmission: "أتوماتيك", engine: "V8" },
-      features: ["قوة سحب عالية", "مساحة شحن واسعة", "دفع رباعي"],
-      minAge: 21,
-    },
-    {
-      id: 16,
-      name: "Chevrolet Silverado",
-      image: chevroletSilverado_Blue,
-      year: "2024",
-      specs: { passengers: 5, transmission: "أتوماتيك", engine: "V8" },
-      features: ["قوة سحب عالية", "مساحة شحن واسعة", "دفع رباعي"],
-      minAge: 21,
-    },
-    {
-      id: 17,
-      name: "Ferrari F8 Spider",
-      image: ferrariF8Spider_Red,
-      year: "2023",
-      specs: { passengers: 2, transmission: "أتوماتيك", engine: "V8" },
-      features: ["سقف مكشوف", "أداء خارق", "تصميم إيطالي فاخر"],
-      minAge: 25,
-    },
-    {
-      id: 18,
-      name: "Ferrari F8 Spider",
-      image: ferrariF8Spider_White,
-      year: "2023",
-      specs: { passengers: 2, transmission: "أتوماتيك", engine: "V8" },
-      features: ["سقف مكشوف", "أداء خارق", "تصميم إيطالي فاخر"],
-      minAge: 25,
-    },
-    {
-      id: 19,
-      name: "McLaren",
-      image: mclaren,
-      year: "2023",
-      specs: { passengers: 2, transmission: "أتوماتيك", engine: "V8" },
-      features: ["سوبر كار", "أداء سباقات", "تصميم مستقبلي"],
-      minAge: 25,
-    },
-    {
-      id: 20,
-      name: "Mini Cooper",
-      image: miniCooper_Black,
-      year: "2023",
-      specs: { passengers: 4, transmission: "أتوماتيك", engine: "4 سلندر" },
-      features: ["تصميم كلاسيكي", "سهل القيادة", "اقتصادي"],
-      minAge: 21,
-    },
-    {
-      id: 21,
-      name: "Mini Cooper",
-      image: miniCooper_Red,
-      year: "2023",
-      specs: { passengers: 4, transmission: "أتوماتيك", engine: "4 سلندر" },
-      features: ["تصميم كلاسيكي", "سهل القيادة", "اقتصادي"],
-      minAge: 21,
-    },
-    {
-      id: 22,
-      name: "Mini Cooper",
-      image: miniCooper_White,
-      year: "2023",
-      specs: { passengers: 4, transmission: "أتوماتيك", engine: "4 سلندر" },
-      features: ["تصميم كلاسيكي", "سهل القيادة", "اقتصادي"],
-      minAge: 21,
-    },
-    {
-      id: 23,
-      name: "Ford Mustang",
-      image: mustang_Black,
-      year: "2023",
-      specs: { passengers: 4, transmission: "أتوماتيك", engine: "V8" },
-      features: ["تصميم عضلي", "أداء قوي", "صوت عادم رياضي"],
-      minAge: 21,
-    },
-    {
-      id: 24,
-      name: "Ford Mustang Dark Horse",
-      image: mustangDarkHorse_Black,
-      year: "2024",
-      specs: { passengers: 4, transmission: "أتوماتيك", engine: "V8" },
-      features: ["إصدار محدود", "أداء متطور", "تصميم حصري"],
-      minAge: 21,
-    },
-    {
-      id: 25,
-      name: "Ford Mustang Dark Horse",
-      image: mustangDarkHorse_Blue,
-      year: "2024",
-      specs: { passengers: 4, transmission: "أتوماتيك", engine: "V8" },
-      features: ["إصدار محدود", "أداء متطور", "تصميم حصري"],
-      minAge: 21,
-    },
-    {
-      id: 26,
-      name: "Ford Mustang",
-      image: mustang_Gray,
-      year: "2023",
-      specs: { passengers: 4, transmission: "أتوماتيك", engine: "V8" },
-      features: ["تصميم عضلي", "أداء قوي", "صوت عادم رياضي"],
-      minAge: 21,
-    },
-    {
-      id: 27,
-      name: "Ford Mustang",
-      image: mustang_Red,
-      year: "2023",
-      specs: { passengers: 4, transmission: "أتوماتيك", engine: "V8" },
-      features: ["تصميم عضلي", "أداء قوي", "صوت عادم رياضي"],
-      minAge: 21,
-    },
-    {
-      id: 28,
-      name: "Porsche 911 Carrera",
-      image: porsche911_Black,
-      year: "2023",
-      specs: { passengers: 2, transmission: "أتوماتيك", engine: "6 سلندر" },
-      features: ["أيقونة السيارات الرياضية", "أداء ألماني دقيق", "تصميم خالد"],
-      minAge: 25,
-    },
-    {
-      id: 29,
-      name: "Porsche 911 Carrera",
-      image: porsche911_Blue,
-      year: "2023",
-      specs: { passengers: 2, transmission: "أتوماتيك", engine: "6 سلندر" },
-      features: ["أيقونة السيارات الرياضية", "أداء ألماني دقيق", "تصميم خالد"],
-      minAge: 25,
-    },
-    {
-      id: 30,
-      name: "Porsche 911 Carrera",
-      image: porsche911_White,
-      year: "2023",
-      specs: { passengers: 2, transmission: "أتوماتيك", engine: "6 سلندر" },
-      features: ["أيقونة السيارات الرياضية", "أداء ألماني دقيق", "تصميم خالد"],
-      minAge: 25,
-    },
-  ];
 
   return (
     <>
@@ -364,109 +408,23 @@ const SportsCarsDetails = () => {
         </motion.div>
 
         <Row className="g-4">
-          {sportsCars.map((car) => (
-            <Col key={car.id} xs={12} lg={6} xl={4}>
-              <motion.div
-                whileHover={{ y: -10 }}
-                transition={{ duration: 0.3 }}
-              >
-                <Card className="shadow-sm border-0 h-100 car-card">
-                  <div
-                    className="position-relative overflow-hidden"
-                    style={{ height: "230px", background: "#f8f9fa" }}
-                  >
-                    <Badge
-                      pill
-                      className="position-absolute"
-                      style={{
-                        top: "15px",
-                        right: "15px",
-                        background: "#fc8b1a",
-                        zIndex: 5,
-                        padding: "8px 15px",
-                      }}
-                    >
-                      موديل {car.year}
-                    </Badge>
-                    <Card.Img
-                      variant="top"
-                      src={car.image}
-                      style={{ paddingBottom: "10px" }}
-                    />
-                  </div>
-
-                  <Card.Body className="p-4">
-                    <Card.Title className="fw-bold fs-4 mb-3 text-center">
-                      {car.name}
-                    </Card.Title>
-
-                    <Row className="text-center g-0 bg-light rounded py-3 mb-3">
-                      <Col xs={4} className="border-end">
-                        <FaUsers color="#fc8b1a" className="mb-1" />
-                        <div className="small fw-bold">
-                          {car.specs.passengers} ركاب
-                        </div>
-                      </Col>
-                      <Col xs={4} className="border-end">
-                        <FaCogs color="#fc8b1a" className="mb-1" />
-                        <div className="small fw-bold">
-                          {car.specs.transmission}
-                        </div>
-                      </Col>
-                      <Col xs={4}>
-                        <FaGasPump color="#fc8b1a" className="mb-1" />
-                        <div className="small fw-bold">{car.specs.engine}</div>
-                      </Col>
-                    </Row>
-
-                    <div className="d-flex flex-wrap gap-2 justify-content-center mb-4">
-                      {car.features.map((feature, idx) => (
-                        <Badge
-                          key={idx}
-                          bg="white"
-                          text="dark"
-                          className="border font-weight-normal py-2 px-3"
-                        >
-                          <FaCheckCircle className="text-warning me-1" />{" "}
-                          {feature}
-                        </Badge>
-                      ))}
-                    </div>
-
-                    <div
-                      className="age-limit-box text-center mb-3 py-2 border rounded"
-                      style={{ color: "#d9534f" }}
-                    >
-                      <FaIdCard className="me-2" /> الحد الأدنى للعمر:{" "}
-                      {car.minAge} سنة
-                    </div>
-
-                    <Button
-                      href={`https://wa.me/+96590930061?text=استفسار عن حجز: ${car.name}`}
-                      target="_blank"
-                      className="whatsapp-btn w-100 border-0 py-3 fw-bold"
-                    >
-                      <FaWhatsapp size={22} className="me-2" /> احجز الآن عبر
-                      واتساب
-                    </Button>
-                  </Card.Body>
-                </Card>
-              </motion.div>
-            </Col>
+          {sportsCarsGrouped.map((car) => (
+            <CarCard key={car.id} car={car} />
           ))}
         </Row>
       </Container>
 
       <style>{`
-        .title-line { width: 80px; height: 4px; background: #fc8b1a; border-radius: 2px; }
+        .title-line { width: 80px; height: 4px; background: #fc8b1a; border-radius: 2px; margin-top: 10px; }
         .car-card { border-radius: 20px; transition: 0.3s; }
-        .whatsapp-btn { 
-          background-color: #25d366; 
-          border-radius: 15px; 
-          display: flex; 
-          align-items: center; 
+        .whatsapp-btn {
+          background-color: #25d366;
+          border-radius: 15px;
+          display: flex;
+          align-items: center;
           justify-content: center;
           transition: 0.3s;
+          color: white;
         }
         .whatsapp-btn:hover { background-color: #128c7e; transform: scale(1.02); }
         .age-limit-box { background-color: #fff5f5; border-color: #feb2b2 !important; font-size: 0.9rem; font-weight: bold; }
