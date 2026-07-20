@@ -4,12 +4,12 @@ import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 
 // --- استيراد الصور مباشرة باستخدام الـ Alias لضمان عملها بعد الـ Build ---
-import luxuryImg from "@/assets/Lux.png";
-import suvImg from "@/assets/sport1.png";
+import luxuryImg from "@/assets/Lux.webp";
+import suvImg from "@/assets/sport1.webp";
 import airportImg from "@/assets/aitbotr.jpg";
 import vipImg from "@/assets/Driver.jpg";
-import familyImg from "@/assets/BagCar.png";
-import economyImg from "@/assets/Suv.png";
+import familyImg from "@/assets/BagCar.webp";
+import economyImg from "@/assets/Suv.webp";
 
 export const AboutUS = () => {
   const { t, i18n } = useTranslation();

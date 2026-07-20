@@ -3,7 +3,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 
-import imageServices from "@/assets/cover.png";
+import imageServices from "@/assets/cover.webp";
 import servicesImage from "@/assets/servies.jpg";
 import imegEnd from "@/assets/personVip.jpg";
 

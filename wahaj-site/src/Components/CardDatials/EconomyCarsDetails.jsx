@@ -41,7 +41,6 @@ import tucson2025_Gray from "@/assets/EconomyCars/Tuson-gray2025.webp";
 import tucson2023_Blue from "@/assets/EconomyCars/Tucson-blue2023.webp";
 import tucson2023_White from "@/assets/EconomyCars/Tucson-white-2023.webp";
 import tucson2023_Gray from "@/assets/EconomyCars/tuson-2023.webp";
-
 import yaris_Silver from "@/assets/EconomyCars/Yaris-salver.webp";
 import yaris_Gray from "@/assets/EconomyCars/Yairs-gray.webp";
 import raize_White from "@/assets/EconomyCars/Raize-white.webp";
@@ -69,7 +68,6 @@ import corollaCross from "@/assets/EconomyCars/Corolla-Cross.webp";
 import rav4w_2023 from "@/assets/EconomyCars/RAV42025.webp";
 import rav4_2023 from "@/assets/EconomyCars/ToyotaRAV4.webp";
 import rav4Salver from "@/assets/EconomyCars/Urban-Cruiser.webp";
-
 import nissanXtrailW from "@/assets/EconomyCars/nissanXtrailW.webp";
 import nissanXtrailB from "@/assets/EconomyCars/nissanXtrailB.webp";
 import urbanCruiser_Gray from "@/assets/EconomyCars/Urban-Cruiser-gray.webp";
@@ -82,11 +80,9 @@ import kiaSeltos_Red from "@/assets/EconomyCars/Seltos-c1.webp";
 import kiaSeltos_Gray from "@/assets/EconomyCars/Seltos-c.webp";
 import bmwX2_white from "@/assets/EconomyCars/bmwX2_white.webp";
 import mercedesC200 from "@/assets/LuxCars/mercedesC200.webp";
-
 import territorygray from "@/assets/EconomyCars/Ford-Territory-Gray.webp";
 import territorywhite from "@/assets/EconomyCars/Ford-Territory-white.webp";
 import territoryblack from "@/assets/EconomyCars/Ford-Territory-black.webp";
-
 import fordGterritory26 from "@/assets/EconomyCars/FordGTerritory26.webp";
 import fordBterritory26 from "@/assets/EconomyCars/FordBTerritory26.webp";
 import fordWterritory26 from "@/assets/EconomyCars/FordwTerritory26.webp";
@@ -96,17 +92,16 @@ import chrysler300c_gray from "@/assets/EconomyCars/chrysler300c_gray.webp";
 import dodgecharger_Black from "@/assets/SportsCars/dodgecharger-Black.webp";
 import dodgecharger_Gray from "@/assets/SportsCars/dodgecharger-Gray.webp";
 import dodgecharger_White from "@/assets/SportsCars/dodgecharger-white.webp";
-
 import tototacamryS21 from "@/assets/EconomyCars/TOYOTACamryS21.webp";
 import tototacamryG21 from "@/assets/EconomyCars/TOYOTACamryG21.webp";
 import tototacamryB21 from "@/assets/EconomyCars/TOYOTACamryB21.webp";
 import tototacamryW21 from "@/assets/EconomyCars/TOYOTACamryW21.webp";
-
 import camrygold25 from "@/assets/EconomyCars/Camry-gold25.webp";
 import camryWhite25 from "@/assets/EconomyCars/Camry-White25.webp";
 import camrygray25 from "@/assets/EconomyCars/Camry-gray25.webp";
 import camryblack25 from "@/assets/EconomyCars/Camry-black25.webp";
-// ── خريطة الألوان (الاسم → كود اللون) ──────────────────
+
+// ── خريطة الألوان ─────────────────────────────────────────
 const COLOR_MAP = {
   أبيض: "#FFFFFF",
   فضي: "#C0C0C0",
@@ -118,7 +113,6 @@ const COLOR_MAP = {
 };
 
 // ── بيانات السيارات المجمّعة ──────────────────────────────
-// ✅ تم تصديرها (export) عشان تُستخدم في صفحة البراند الموحّدة BrandCars.jsx
 export const economyCarsGrouped = [
   {
     id: "bmw-x2-2025",
@@ -220,7 +214,7 @@ export const economyCarsGrouped = [
     variants: [
       { color: "أسود", image: chrysler300c_Black },
       { color: "فضي", image: chrysler300c_Silver },
-      { color: "فضي", image: chrysler300c_gray },
+      { color: "رمادي", image: chrysler300c_gray },
     ],
   },
   {
@@ -328,7 +322,7 @@ export const economyCarsGrouped = [
     ],
   },
   {
-    id: "yaris-2022-a",
+    id: "yaris-2022",
     name: "Toyota Yaris",
     year: "2022",
     specs: { passengers: 5, transmission: "أتوماتيك", engine: "1.5L" },
@@ -364,6 +358,20 @@ export const economyCarsGrouped = [
     ],
   },
   {
+    id: "camry-2025",
+    name: "Toyota Camry",
+    year: "2025",
+    specs: { passengers: 5, transmission: "أتوماتيك", engine: "2.5L" },
+    features: ["سيدان فارهة", "تقنية هايبرد", "راحة فائقة"],
+    minAge: 21,
+    variants: [
+      { color: "أبيض", image: camryWhite25 },
+      { color: "رمادي", image: camrygray25 },
+      { color: "أسود", image: camryblack25 },
+      { color: "ذهبي", image: camrygold25 },
+    ],
+  },
+  {
     id: "kia-k4-2025",
     name: "Kia K4",
     year: "2025",
@@ -385,20 +393,6 @@ export const economyCarsGrouped = [
     variants: [
       { color: "أبيض", image: kia_Pegas_White },
       { color: "فضي", image: kia_Pegas_Silver },
-    ],
-  },
-  {
-    id: "camry-2025",
-    name: "Toyota Camry",
-    year: "2025",
-    specs: { passengers: 5, transmission: "أتوماتيك", engine: "2.5L" },
-    features: ["سيدان فارهة", "تقنية هايبرد", "راحة فائقة"],
-    minAge: 21,
-    variants: [
-      { color: "أبيض", image: camryWhite25 },
-      { color: "فضي", image: camrygray25 },
-      { color: "أسود", image: camryblack25 },
-      { color: "ذهبي", image: camrygold25 },
     ],
   },
   {
@@ -478,10 +472,9 @@ export const economyCarsGrouped = [
       { color: "فضي", image: rav4Salver },
     ],
   },
-
   {
     id: "urban-cruiser-2024",
-    name: "Toyota Urban",
+    name: "Toyota Urban Cruiser",
     year: "2024",
     specs: { passengers: 5, transmission: "أتوماتيك", engine: "1.5L Hybrid" },
     features: ["كروس أوفر هايبرد", "تصميم شبابي عصري", "اقتصادي في المدينة"],
@@ -557,11 +550,7 @@ const CarCard = ({ car, index }) => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.3 }}
-              style={{
-                objectFit: "cover",
-                height: "100%",
-                width: "100%",
-              }}
+              style={{ objectFit: "cover", height: "100%", width: "100%" }}
             />
           </div>
 
@@ -673,8 +662,6 @@ const CarCard = ({ car, index }) => {
 
 // ── الكومبوننت الرئيسي ────────────────────────────────────
 const EconomyCarsDetails = () => {
-  const { t } = useTranslation();
-
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -700,7 +687,7 @@ const EconomyCarsDetails = () => {
               background: "#fc8b1a",
               borderRadius: "10px",
             }}
-          ></div>
+          />
           <p className="text-muted mt-3 fs-5">
             خيارك الذكي للتنقل اليومي بأقل تكلفة وأعلى كفاءة
           </p>

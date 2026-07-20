@@ -15,16 +15,16 @@ import "swiper/css/pagination";
 import "swiper/css/effect-fade";
 
 // --- استيراد الصور مباشرة باستخدام الـ Alias لضمان عملها بعد الـ Build ---
-import cover from "@/assets/cover.png";
-import sport1 from "@/assets/sport1.png";
-import sport2 from "@/assets/sport2.png";
-import sport3 from "@/assets/sport3.png";
-import lux from "@/assets/Lux.png";
-import suv from "@/assets/Suv.png";
-import suv2 from "@/assets/Suv2.png";
-import suv3 from "@/assets/Suv3.png";
-import bag from "@/assets/BagCar.png";
-import bag2 from "@/assets/BagCar2.png";
+import cover from "@/assets/cover.webp";
+import sport1 from "@/assets/sport1.webp";
+import sport2 from "@/assets/sport2.webp";
+import sport3 from "@/assets/sport3.webp";
+import lux from "@/assets/Lux.webp";
+import suv from "@/assets/Suv.webp";
+import suv2 from "@/assets/Suv2.webp";
+import suv3 from "@/assets/Suv3.webp";
+import bag from "@/assets/BagCar.webp";
+import bag2 from "@/assets/BagCar2.webp";
 
 const imgs = {
   cover,

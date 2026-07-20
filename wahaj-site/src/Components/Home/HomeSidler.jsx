@@ -6,9 +6,9 @@ import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
 // --- استيراد الصور مباشرة باستخدام الـ Alias ---
-import imgSlider1 from "@/assets/cover.png";
-import imgSlider2 from "@/assets/Lux.png";
-import imgSlider3 from "@/assets/sport1.png";
+import imgSlider1 from "@/assets/cover.webp";
+import imgSlider2 from "@/assets/Lux.webp";
+import imgSlider3 from "@/assets/sport1.webp";
 
 // --- دالة تحويل اسم البراند لـ slug صالح للرابط ---
 import { toSlug } from "@/utils/brandUtils";
