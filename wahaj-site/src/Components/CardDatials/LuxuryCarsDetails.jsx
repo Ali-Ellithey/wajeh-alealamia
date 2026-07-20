@@ -52,7 +52,7 @@ import RollsRoyceCullinan_White from "@/assets/LuxCars/Rolls-RoyceCullinan-White
 import BMWx6Mpower from "@/assets/LuxCars/BMWx6Mpower.webp";
 import BMW740I from "@/assets/LuxCars/BMW740I-Blck.webp";
 import BMW740I_white from "@/assets/LuxCars/BMW740I-white.webp";
-import BMW735IBlack from "@/assets/LuxCars/BMW735I-black2025.webp";
+import BMW735IBlack from "@/assets/LuxCars/BMW735i-black2025.webp";
 import BMW735I_white from "@/assets/LuxCars/BMW735-whitei2025.webp";
 
 // ── خريطة الألوان ──────────────────────────────────────────
