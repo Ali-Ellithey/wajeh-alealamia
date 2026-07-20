@@ -8,10 +8,23 @@ const __dirname = path.dirname(__filename)
 
 export default defineConfig({
   plugins: [react()],
-  base: '/', // رجعها كده عشان تفتح على المسار الرئيسي لـ Vercel
+  base: '/',
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  build: {
+    chunkSizeWarningLimit: 1000,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'react-vendor': ['react', 'react-dom', 'react-router-dom'],
+          'ui-vendor': ['react-bootstrap', 'bootstrap'],
+          'animation-vendor': ['framer-motion'],
+          'icons-vendor': ['react-icons'],
+        }
+      }
+    }
+  }
 })
