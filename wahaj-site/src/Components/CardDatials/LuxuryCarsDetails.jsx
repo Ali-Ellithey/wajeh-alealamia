@@ -23,24 +23,37 @@ import ROX01 from "@/assets/LuxCars/ROX01.webp";
 import LandRoverDefender_white from "@/assets/LuxCars/LandRoverDefender_white.webp";
 import LandRoverDefender_Grey from "@/assets/LuxCars/LandRoverDefender_Grey.webp";
 import LandRoverDefender_Black from "@/assets/LuxCars/LandRoverDefender_Black.webp";
+
+import LandRoverDefender25B from "@/assets/LuxCars/LandRoverDefender25B.webp";
+import LandRoverDefender25G from "@/assets/LuxCars/LandRoverDefender25G.webp";
+import LandRoverDefender25W from "@/assets/LuxCars/LandRoverDefender25w.webp";
+
 import mercedesS500_white from "@/assets/LuxCars/mercedesS500-white.webp";
 import mercedesS500_black from "@/assets/LuxCars/mercedesS500-black.webp";
-import mercedesC500_blue from "@/assets/LuxCars/mercedesC500-blue.webp";
-import mercedesC500_black from "@/assets/LuxCars/mercedesC500-black.webp";
-import mercedesC500_white from "@/assets/LuxCars/mercedesC500-white.webp";
-import mercedesC200 from "@/assets/LuxCars/mercedesC200.webp";
-import mercedesAMG_Cla from "@/assets/LuxCars/mercedesAMG-Cla.webp";
+
 import RangeRoverSport_Read from "@/assets/LuxCars/RangeRoverSport_Read.webp";
 import RangeRoverSport_White from "@/assets/LuxCars/RangeRoverSport_White.webp";
 import RangeRoverSport_Black from "@/assets/LuxCars/RangeRoverSport_Black.webp";
-import MercedesG_Class500_Blue from "@/assets/LuxCars/MercedesG-Class500-Blue.webp";
-import MercedesG_Class500_Black from "@/assets/LuxCars/MercedesG-Class500-Black.webp";
+import g63_White from "@/assets/LuxCars/MercedesG63ClassW22.webp";
+import g63_Gray from "@/assets/LuxCars/MercedesG63ClassG22.webp";
+import g63_Black from "@/assets/LuxCars/MercedesG63ClassB22.webp";
+import g63_Blue from "@/assets/LuxCars/MercedesG63ClassBlue22.webp";
+
+import MercedesGClass50024Blue from "@/assets/LuxCars/MercedesG-Class50024Blue.webp";
+import MercedesGClass50024Black from "@/assets/LuxCars/MercedesG-Class50024Black.webp";
+
 import RangeRoverVogue_black from "@/assets/LuxCars/Range-Rover-Vogue_black.webp";
+
 import RangeRoverAutobiography from "@/assets/LuxCars/RangeRoverAutobiography.webp";
 import RangeRoverVogue_white from "@/assets/LuxCars/Range-Rover-Vogue_white.webp";
 import RangeRoverAutobiography_Black from "@/assets/LuxCars/RangeRoverAutobiography-Black.webp";
 import RollsRoyceCullinan_Black from "@/assets/LuxCars/Rolls-RoyceCullinan-Black.webp";
 import RollsRoyceCullinan_White from "@/assets/LuxCars/Rolls-RoyceCullinan-White.webp";
+import BMWx6Mpower from "@/assets/LuxCars/BMWx6Mpower.webp";
+import BMW740I from "@/assets/LuxCars/BMW740I-Blck.webp";
+import BMW740I_white from "@/assets/LuxCars/BMW740I-white.webp";
+import BMW735IBlack from "@/assets/LuxCars/BMW735I-black2025.webp";
+import BMW735I_white from "@/assets/LuxCars/BMW735-whitei2025.webp";
 
 // ── خريطة الألوان ──────────────────────────────────────────
 const COLOR_MAP = {
@@ -56,7 +69,7 @@ const COLOR_MAP = {
 };
 
 // ── بيانات السيارات المجمّعة ────────────────────────────────
-const luxuryCarsGrouped = [
+export const luxuryCarsGrouped = [
   {
     id: "ford-bronco-2024",
     name: "Ford Bronco",
@@ -99,7 +112,7 @@ const luxuryCarsGrouped = [
     minAge: 25,
     variants: [
       { color: "رمادي", image: lamborghiniurus_gray },
-      { color: "أصفر", image: lamborghiniurus },
+      { color: "أسود", image: lamborghiniurus },
     ],
   },
   {
@@ -112,15 +125,6 @@ const luxuryCarsGrouped = [
     variants: [{ color: "أبيض", image: ROX01 }],
   },
   {
-    id: "defender-2025",
-    name: "Land Rover Defender",
-    year: "2025",
-    specs: { passengers: 5, transmission: "أتوماتيك", engine: "P400" },
-    features: ["قدرات وعرة", "تصميم عصري", "دفع رباعي"],
-    minAge: 21,
-    variants: [{ color: "أبيض", image: LandRoverDefender_white }],
-  },
-  {
     id: "defender-2024",
     name: "Land Rover Defender",
     year: "2024",
@@ -130,12 +134,62 @@ const luxuryCarsGrouped = [
     variants: [
       { color: "رمادي", image: LandRoverDefender_Grey },
       { color: "أسود", image: LandRoverDefender_Black },
+      { color: "أبيض", image: LandRoverDefender_white },
     ],
   },
   {
-    id: "mercedes-s500-2024",
-    name: "Mercedes S500",
+    id: "mercedes-g63-2024",
+    name: "Mercedes G-Class500 AMG",
     year: "2024",
+    specs: {
+      passengers: 5,
+      transmission: "أتوماتيك",
+      engine: "4.0L V8 Twin-Turbo",
+    },
+    features: [
+      "أيقونة الفخامة والقوة بتصميم صندوقي كلاسيكي",
+      "أداء جبار على الطرق الوعرة والتضاريس الصعبة",
+      "مقصورة داخلية فائقة الرفاهية بنظام صوتي محيطي",
+    ],
+    minAge: 25,
+    variants: [
+      { color: "أزرق", image: MercedesGClass50024Blue },
+      { color: "أسود", image: MercedesGClass50024Black },
+    ],
+  },
+  {
+    id: "defender-2025",
+    name: "Land Rover Defender",
+    year: "2025",
+    specs: { passengers: 5, transmission: "أتوماتيك", engine: "P400" },
+    features: ["قدرات وعرة", "تصميم عصري", "دفع رباعي"],
+    minAge: 21,
+    variants: [
+      { color: "رمادي", image: LandRoverDefender25G },
+      { color: "أسود", image: LandRoverDefender25B },
+      { color: "أبيض", image: LandRoverDefender25W },
+    ],
+  },
+  {
+    id: "bmw-740i-2024",
+    name: "BMW 740i",
+    year: "2024",
+    specs: { passengers: 5, transmission: "أتوماتيك", engine: "I6 TwinPower" },
+    features: [
+      "شاشة ترفيه خلفية عملاقة",
+      "أبواب شفط ذكية",
+      "إضاءة سقف الكريستال Panorama",
+    ],
+    minAge: 25,
+    variants: [
+      { color: "أبيض", image: BMW740I_white },
+      { color: "أسود", image: BMW740I },
+    ],
+  },
+  {
+    id: "mercedes-s500-2022",
+    name: "Mercedes S500",
+    year: "2022",
     specs: { passengers: 5, transmission: "أتوماتيك", engine: "V6 Turbo" },
     features: ["فخامة الصالون", "مقاعد مساج", "شاشة MBUX"],
     minAge: 21,
@@ -145,49 +199,20 @@ const luxuryCarsGrouped = [
     ],
   },
   {
-    id: "mercedes-sclass-2022",
-    name: "Mercedes S-Class",
-    year: "2022",
-    specs: { passengers: 5, transmission: "أتوماتيك", engine: "V6 Turbo" },
-    features: ["فخامة الصالون", "مقاعد مساج", "شاشة MBUX"],
-    minAge: 21,
-    variants: [{ color: "أزرق", image: mercedesC500_blue }],
-  },
-  {
-    id: "mercedes-sclass-2024",
-    name: "Mercedes S-Class",
-    year: "2024",
-    specs: { passengers: 5, transmission: "أتوماتيك", engine: "V6 Turbo" },
-    features: ["فخامة الصالون", "مقاعد مساج", "شاشة MBUX"],
-    minAge: 21,
-    variants: [{ color: "أبيض", image: mercedesC500_white }],
-  },
-  {
-    id: "mercedes-sclass-2025",
-    name: "Mercedes S-Class",
+    id: "bmw-735i-2025",
+    name: "BMW 735i",
     year: "2025",
-    specs: { passengers: 5, transmission: "أتوماتيك", engine: "V6 Turbo" },
-    features: ["فخامة الصالون", "مقاعد مساج", "شاشة MBUX"],
-    minAge: 21,
-    variants: [{ color: "أسود", image: mercedesC500_black }],
-  },
-  {
-    id: "mercedes-c200-2023",
-    name: "Mercedes C200",
-    year: "2023",
-    specs: { passengers: 5, transmission: "أتوماتيك", engine: "Turbo 4" },
-    features: ["تصميم رياضي", "شاشة رقمية", "اقتصادية في الاستهلاك"],
-    minAge: 21,
-    variants: [{ color: "أسود", image: mercedesC200 }],
-  },
-  {
-    id: "mercedes-cla-2024",
-    name: "Mercedes CLA AMG",
-    year: "2024",
-    specs: { passengers: 5, transmission: "أتوماتيك", engine: "AMG Turbo" },
-    features: ["تصميم كوبيه", "جنوط AMG", "أداء رياضي"],
-    minAge: 21,
-    variants: [{ color: "أسود", image: mercedesAMG_Cla }],
+    specs: { passengers: 5, transmission: "أتوماتيك", engine: "I6 TwinPower" },
+    features: [
+      "شاشة مسرح خلفية (Theater Screen)",
+      "تحكم ذكي باللمس في الأبواب",
+      "نظام صوتي Bowers & Wilkins",
+    ],
+    minAge: 25,
+    variants: [
+      { color: "أبيض", image: BMW735I_white },
+      { color: "أسود", image: BMW735IBlack },
+    ],
   },
   {
     id: "rr-sport-2023",
@@ -196,30 +221,41 @@ const luxuryCarsGrouped = [
     specs: { passengers: 5, transmission: "أتوماتيك", engine: "V8 Dynamic" },
     features: ["ثبات عالي", "كاميرات 360", "هيدروليك"],
     minAge: 21,
-    variants: [{ color: "أحمر", image: RangeRoverSport_Read }],
-  },
-  {
-    id: "rr-sport-2024",
-    name: "Range Rover Sport",
-    year: "2024",
-    specs: { passengers: 5, transmission: "أتوماتيك", engine: "V8 Dynamic" },
-    features: ["ثبات عالي", "كاميرات 360", "هيدروليك"],
-    minAge: 21,
     variants: [
+      { color: "أحمر", image: RangeRoverSport_Read },
       { color: "أبيض", image: RangeRoverSport_White },
       { color: "أسود", image: RangeRoverSport_Black },
     ],
   },
   {
-    id: "mercedes-g500-2024",
-    name: "Mercedes G-Class 500",
+    id: "bmw-x6m-2024",
+    name: "BMW X6 M Power",
     year: "2024",
-    specs: { passengers: 5, transmission: "أتوماتيك", engine: "V8 Biturbo" },
-    features: ["دفع رباعي", "شاشات ديجيتال", "إضاءة محيطية"],
-    minAge: 21,
+    specs: { passengers: 5, transmission: "أتوماتيك", engine: "V8 TwinPower" },
+    features: ["نظام دفع M xDrive", "مقاعد رياضية جلد", "شاشة عرض ملونة"],
+    minAge: 25,
+    variants: [{ color: "فضي", image: BMWx6Mpower }],
+  },
+  {
+    id: "mercedes-g63-2022",
+    name: "Mercedes G-Class63 AMG",
+    year: "2022",
+    specs: {
+      passengers: 5,
+      transmission: "أتوماتيك",
+      engine: "4.0L V8 Twin-Turbo",
+    },
+    features: [
+      "أيقونة الفخامة والقوة بتصميم صندوقي كلاسيكي",
+      "أداء جبار على الطرق الوعرة والتضاريس الصعبة",
+      "مقصورة داخلية فائقة الرفاهية بنظام صوتي محيطي",
+    ],
+    minAge: 25,
     variants: [
-      { color: "أزرق", image: MercedesG_Class500_Blue },
-      { color: "أسود", image: MercedesG_Class500_Black },
+      { color: "أزرق", image: g63_Blue },
+      { color: "أسود", image: g63_Black },
+      { color: "رمادي", image: g63_Gray },
+      { color: "أبيض", image: g63_White },
     ],
   },
   {
@@ -242,7 +278,7 @@ const luxuryCarsGrouped = [
     features: ["فخامة قصوى", "مقاعد تنفيذية", "عزل صوتي فائق"],
     minAge: 21,
     variants: [
-      { color: "بيج", image: RangeRoverAutobiography },
+      { color: "أبيض", image: RangeRoverAutobiography },
       { color: "أسود", image: RangeRoverAutobiography_Black },
     ],
   },
@@ -273,7 +309,6 @@ const CarCard = ({ car, index }) => {
         transition={{ delay: index * 0.05 }}
       >
         <Card className="shadow-sm border-0 h-100 car-card overflow-hidden">
-          {/* ── صورة السيارة ── */}
           <div
             className="position-relative"
             style={{ height: "230px", background: "#f8f9fa" }}
@@ -310,7 +345,6 @@ const CarCard = ({ car, index }) => {
           <Card.Body className="p-4 text-center">
             <Card.Title className="fw-bold mb-2 fs-4">{car.name}</Card.Title>
 
-            {/* ── بلت الألوان ── */}
             {car.variants.length > 1 && (
               <div className="d-flex justify-content-center align-items-center gap-2 mb-3 flex-wrap">
                 <span className="text-muted small ms-1">اللون:</span>
@@ -348,7 +382,6 @@ const CarCard = ({ car, index }) => {
               </div>
             )}
 
-            {/* ── مواصفات ── */}
             <Row className="g-0 bg-light rounded py-3 mb-3 text-secondary">
               <Col xs={4} className="border-end">
                 <FaUsers color="#fc8b1a" />
@@ -370,7 +403,6 @@ const CarCard = ({ car, index }) => {
               </Col>
             </Row>
 
-            {/* ── مميزات ── */}
             <div className="d-flex flex-wrap justify-content-center gap-2 mb-3">
               {car.features.map((f, i) => (
                 <Badge
@@ -384,12 +416,10 @@ const CarCard = ({ car, index }) => {
               ))}
             </div>
 
-            {/* ── الحد الأدنى للعمر ── */}
             <div className="rental-info-box mb-3 p-2 border rounded border-danger text-danger fw-bold small bg-light">
               <FaIdCard className="me-1" /> الحد الأدنى للعمر: {car.minAge} سنة
             </div>
 
-            {/* ── زر واتساب ── */}
             <Button
               variant="success"
               href={`https://wa.me/+96590930061?text=استفسار عن حجز ${car.name} موديل ${car.year} - اللون ${car.variants[selectedVariant].color}`}

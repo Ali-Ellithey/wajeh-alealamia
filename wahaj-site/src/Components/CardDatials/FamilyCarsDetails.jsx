@@ -16,27 +16,40 @@ import HomeSidler from "@/Components/Home/HomeSidler";
 import gmc_yukon_gray from "@/assets/FamilyCars/gmc-yukon-gray.webp";
 import gmc_yukon_blabk from "@/assets/FamilyCars/gmc-yukon-blabk.webp";
 import gmc_yukon_white from "@/assets/FamilyCars/gmc-yukon-white.webp";
-import Jeep_wrangler_Sport_black from "@/assets/FamilyCars/Jeep-wrangler-Sport-black.webp";
-import Jeep_wrangler_Sahara from "@/assets/FamilyCars/Jeep-wrangler-Sahara.webp";
-import Jeep_wrangler_sport_slaver from "@/assets/FamilyCars/Jeep-wrangler-sport-slaver.webp";
-import jeep_wrangle_sport from "@/assets/FamilyCars/jeep-wrangle-sport.webp";
+import JeepWranglerSportB from "@/assets/FamilyCars/JeepWranglerSportB2023.webp";
+import JeepWranglerSportG from "@/assets/FamilyCars/JeepWranglerSportG2023.webp";
+import JeepWranglerSport24B from "@/assets/FamilyCars/JeepWranglerSportB24.webp";
+import JeepWranglerSport24G from "@/assets/FamilyCars/JeepWranglerSportG24.webp";
+
+import JeepWranglerSaharaB23 from "@/assets/FamilyCars/JeepWranglerSaharaB23.webp";
+import JeepWranglerSaharaG23 from "@/assets/FamilyCars/JeepWranglerSaharaG23.webp";
+
+import JeepWranglerSaharaB24 from "@/assets/FamilyCars/JeepWranglerSaharaB24.webp";
+import JeepWranglerSaharaG24 from "@/assets/FamilyCars/JeepWranglerSaharaG24.webp";
 import nissan_safari_black from "@/assets/FamilyCars/nissan-safari-black.webp";
 import nissan_safari_salver from "@/assets/FamilyCars/nissan-safari-salver.webp";
-import nissan_trail from "@/assets/FamilyCars/nissan-trail.webp";
-import nissan_xtrail from "@/assets/FamilyCars/nissan-xtrail.webp";
+
 import nissan_patrol_slaver from "@/assets/FamilyCars/nissan-patrol-slaver.webp";
 import nissan_patrol_black from "@/assets/FamilyCars/nissan-patrol-black.webp";
 import nissan_patrol_white from "@/assets/FamilyCars/nissan-patrol-white.webp";
 import Tahoe_black from "@/assets/FamilyCars/Tahoe-black.webp";
 import Tahoe_salver from "@/assets/FamilyCars/Tahoe-salver.webp";
-import Tahoe_Gold from "@/assets/FamilyCars/Tahoe-Gold.webp";
-import Ford_Territory_black from "@/assets/FamilyCars/Ford-Territory-black.webp";
-import prado_Silver from "@/assets/EconomyCars/Prado.webp";
-import prado_White from "@/assets/EconomyCars/Prado-white.webp";
-import prado_Black from "@/assets/EconomyCars/prado-black.webp";
+import TahoeW25 from "@/assets/FamilyCars/TahoeW25.webp";
+import TahoeB25 from "@/assets/FamilyCars/TahoeB25.webp";
+
 import jetour_White from "@/assets/EconomyCars/Jetour-white.webp";
 import jetour_Black from "@/assets/EconomyCars/Jetour-black.webp";
 import jetour_Silver from "@/assets/EconomyCars/JETOUR-salver.webp";
+
+import prado_Silver from "@/assets/FamilyCars/Prado.webp";
+import prado_White from "@/assets/FamilyCars/Prado-white.webp";
+import prado_Black from "@/assets/FamilyCars/prado-black.webp";
+import lexw from "@/assets/FamilyCars/lx600w-25.webp";
+import lexB from "@/assets/FamilyCars/lx600-25B.webp";
+
+import toyotalandCruiserB25 from "@/assets/FamilyCars/toyotalandCruiserB25.webp";
+import toyotalandCruiserG25 from "@/assets/FamilyCars/toyotalandCruiserG25.webp";
+import toyotalandCruiserw25 from "@/assets/FamilyCars/toyotalandCruiserw25.webp";
 
 // ── خريطة الألوان ──────────────────────────────────────────
 const COLOR_MAP = {
@@ -51,11 +64,12 @@ const COLOR_MAP = {
 };
 
 // ── بيانات السيارات المجمّعة ────────────────────────────────
-const familyCarsGrouped = [
+// ✅ تم تصديرها (export) عشان تُستخدم في صفحة البراند الموحّدة BrandCars.jsx
+export const familyCarsGrouped = [
   {
-    id: "gmc-yukon-2024",
+    id: "gmc-yukon-2025",
     name: "GMC Yukon",
-    year: "2024",
+    year: "2025",
     specs: { passengers: 7, transmission: "أتوماتيك", engine: "V8" },
     features: ["مساحة عملاقة", "شاشات خلفية", "نظام صوت متطور"],
     minAge: 21,
@@ -72,7 +86,97 @@ const familyCarsGrouped = [
     specs: { passengers: 5, transmission: "أتوماتيك", engine: "V6" },
     features: ["دفع رباعي", "سقف قابل للفتح", "تصميم وعر"],
     minAge: 21,
-    variants: [{ color: "أسود", image: Jeep_wrangler_Sport_black }],
+    variants: [
+      { color: "أسود", image: JeepWranglerSport24B },
+      { color: "رمادي", image: JeepWranglerSport24G },
+    ],
+  },
+  {
+    id: "prado-2025",
+    name: "Toyota Prado",
+    year: "2025",
+    specs: { passengers: 7, transmission: "أتوماتيك", engine: "2.8L Diesel" },
+    features: [
+      "SUV فاخر 7 مقاعد",
+      "قدرة على الطرق الوعرة",
+      "تصميم كلاسيكي أيقوني",
+    ],
+    minAge: 21,
+    variants: [
+      { color: "فضي", image: prado_Silver },
+      { color: "أبيض", image: prado_White },
+      { color: "أسود", image: prado_Black },
+    ],
+  },
+  {
+    id: "lexus-lx600-2025",
+    name: "Lexus LX 600",
+    year: "2025",
+    specs: {
+      passengers: 7,
+      transmission: "أتوماتيك",
+      engine: "3.5L V6 Twin-Turbo",
+    },
+    features: [
+      "أعلى درجات الفخامة والرفاهية",
+      "نظام دفع رباعي متطور للأماكن الوعرة",
+      "تقنيات أمان ووسائط متعددة حديثة",
+    ],
+    minAge: 23,
+    variants: [
+      { color: "أبيض", image: lexw },
+      { color: "أسود", image: lexB },
+    ],
+  },
+  {
+    id: "jeep-wrangler-sport-2023",
+    name: "Jeep Wrangler Sport",
+    year: "2023",
+    specs: { passengers: 5, transmission: "أتوماتيك", engine: "V6" },
+    features: ["دفع رباعي", "سقف قابل للفتح", "تصميم وعر"],
+    minAge: 21,
+    variants: [
+      { color: "أسود", image: JeepWranglerSportB },
+      { color: "رمادي", image: JeepWranglerSportG },
+    ],
+  },
+  {
+    id: "tahoe-2025",
+    name: "Chevrolet Tahoe",
+    year: "2025",
+    specs: { passengers: 7, transmission: "أتوماتيك", engine: "V8" },
+    features: ["مساحة عملاقة", "أداء قوي", "تصميم فاخر"],
+    minAge: 21,
+    variants: [
+      { color: "أسود", image: TahoeB25 },
+      { color: "أبيض", image: TahoeW25 },
+    ],
+  },
+  {
+    id: "jeep-wrangler-sahara-2023",
+    name: "Jeep Wrangler Sahara",
+    year: "2023",
+    specs: { passengers: 5, transmission: "أتوماتيك", engine: "V6" },
+    features: ["دفع رباعي", "سقف قابل للفتح", "تصميم وعر"],
+    minAge: 21,
+    variants: [
+      { color: "أسود", image: JeepWranglerSaharaB23 },
+      { color: "رمادي", image: JeepWranglerSaharaG23 },
+    ],
+  },
+
+  {
+    id: "nissan-patrol-2025",
+    name: "Nissan Patrol",
+    year: "2025",
+    specs: { passengers: 7, transmission: "أتوماتيك", engine: "V6" },
+    features: ["دفع رباعي", "أداء صحراوي", "مساحة واسعة"],
+    minAge: 21,
+    variants: [
+      { color: "أسود", image: nissan_patrol_black },
+      { color: "أبيض", image: nissan_patrol_white },
+      { color: "فضي", image: nissan_patrol_slaver },
+    ],
   },
   {
     id: "jeep-wrangler-sahara-2024",
@@ -81,63 +185,45 @@ const familyCarsGrouped = [
     specs: { passengers: 5, transmission: "أتوماتيك", engine: "V6" },
     features: ["دفع رباعي", "سقف قابل للفتح", "تصميم وعر"],
     minAge: 21,
-    variants: [{ color: "بيج", image: Jeep_wrangler_Sahara }],
-  },
-  {
-    id: "jeep-wrangler-sport-2014",
-    name: "Jeep Wrangler Sport",
-    year: "2014",
-    specs: { passengers: 5, transmission: "أتوماتيك", engine: "V6" },
-    features: ["دفع رباعي", "سقف قابل للفتح", "تصميم وعر"],
-    minAge: 21,
-    variants: [{ color: "فضي", image: Jeep_wrangler_sport_slaver }],
-  },
-  {
-    id: "jeep-wrangler-sport-2018",
-    name: "Jeep Wrangler Sport",
-    year: "2018",
-    specs: { passengers: 5, transmission: "أتوماتيك", engine: "V6" },
-    features: ["دفع رباعي", "سقف قابل للفتح", "تصميم وعر"],
-    minAge: 21,
-    variants: [{ color: "رمادي", image: jeep_wrangle_sport }],
-  },
-  {
-    id: "nissan-patrol-2024",
-    name: "Nissan Patrol",
-    year: "2024",
-    specs: { passengers: 7, transmission: "أتوماتيك", engine: "V6" },
-    features: ["دفع رباعي", "أداء صحراوي", "مساحة واسعة"],
-    minAge: 21,
     variants: [
-      { color: "أسود", image: nissan_safari_black },
-      { color: "أسود", image: nissan_patrol_black },
-      { color: "أبيض", image: nissan_patrol_white },
+      { color: "أسود", image: JeepWranglerSaharaB24 },
+      { color: "رمادي", image: JeepWranglerSaharaG24 },
     ],
   },
   {
-    id: "nissan-patrol-2010",
-    name: "Nissan Patrol",
-    year: "2010",
+    id: "nissan-patrol-2023",
+    name: "Nissan Patrol Safari",
+    year: "2023",
     specs: { passengers: 7, transmission: "أتوماتيك", engine: "V6" },
     features: ["دفع رباعي", "أداء صحراوي", "مساحة واسعة"],
     minAge: 21,
     variants: [
       { color: "فضي", image: nissan_safari_salver },
-      { color: "فضي", image: nissan_patrol_slaver },
+      { color: "أسود", image: nissan_safari_black },
     ],
   },
   {
-    id: "nissan-xtrail-2024",
-    name: "Nissan X-Trail",
-    year: "2024",
-    specs: { passengers: 5, transmission: "أتوماتيك", engine: "Turbo" },
-    features: ["تصميم رياضي", "شاشة لمس", "اقتصادية في الاستهلاك"],
-    minAge: 21,
+    id: "toyota-land-cruiser-2025",
+    name: "Toyota Land Cruiser",
+    year: "2025",
+    specs: {
+      passengers: 7,
+      transmission: "أتوماتيك",
+      engine: "3.4L V6 Twin-Turbo",
+    },
+    features: [
+      "مفخرة الأرض بأعلى مستويات الفخامة والراحة العائلية",
+      "نظام دفع رباعي ذكي متطور لجميع أنواع التضاريس والصحراء",
+      "تقنيات أمان متكاملة وشاشات عرض ترفيهية متطورة",
+    ],
+    minAge: 23,
     variants: [
-      { color: "رمادي", image: nissan_trail },
-      { color: "أبيض", image: nissan_xtrail },
+      { color: "أسود", image: toyotalandCruiserB25 },
+      { color: "رمادي", image: toyotalandCruiserG25 },
+      { color: "أبيض", image: toyotalandCruiserw25 },
     ],
   },
+
   {
     id: "tahoe-2024",
     name: "Chevrolet Tahoe",
@@ -148,18 +234,9 @@ const familyCarsGrouped = [
     variants: [
       { color: "أسود", image: Tahoe_black },
       { color: "فضي", image: Tahoe_salver },
-      { color: "ذهبي", image: Tahoe_Gold },
     ],
   },
-  {
-    id: "ford-territory-2024",
-    name: "Ford Territory",
-    year: "2024",
-    specs: { passengers: 5, transmission: "أتوماتيك", engine: "Turbo" },
-    features: ["تصميم عصري", "مساحة عائلية", "اقتصادية في الاستهلاك"],
-    minAge: 21,
-    variants: [{ color: "أسود", image: Ford_Territory_black }],
-  },
+
   {
     id: "jetour-t2-2025",
     name: "Jetour T2",
@@ -181,35 +258,6 @@ const familyCarsGrouped = [
       { color: "فضي", image: jetour_Silver },
     ],
   },
-  {
-    id: "prado-2025",
-    name: "Toyota Land Cruiser Prado",
-    year: "2025",
-    specs: { passengers: 7, transmission: "أتوماتيك", engine: "2.8L Diesel" },
-    features: [
-      "SUV فاخر 7 مقاعد",
-      "قدرة على الطرق الوعرة",
-      "تصميم كلاسيكي أيقوني",
-    ],
-    minAge: 21,
-    variants: [
-      { color: "فضي", image: prado_Silver },
-      { color: "أبيض", image: prado_White },
-    ],
-  },
-  {
-    id: "prado-2024",
-    name: "Toyota Land Cruiser Prado",
-    year: "2024",
-    specs: { passengers: 7, transmission: "أتوماتيك", engine: "2.8L Diesel" },
-    features: [
-      "SUV فاخر 7 مقاعد",
-      "قدرة على الطرق الوعرة",
-      "تصميم كلاسيكي أيقوني",
-    ],
-    minAge: 21,
-    variants: [{ color: "أسود", image: prado_Black }],
-  },
 ];
 
 // ── كومبوننت الكارت الواحد ──────────────────────────────────
@@ -226,7 +274,6 @@ const CarCard = ({ car, index }) => {
         transition={{ delay: index * 0.1 }}
       >
         <Card className="shadow-sm border-0 h-100 car-card overflow-hidden bg-white">
-          {/* ── صورة السيارة ── */}
           <div
             className="position-relative"
             style={{ height: "230px", background: "#f8f9fa" }}
@@ -268,7 +315,6 @@ const CarCard = ({ car, index }) => {
               {car.name}
             </Card.Title>
 
-            {/* ── بلت الألوان ── */}
             {car.variants.length > 1 && (
               <div className="d-flex justify-content-center align-items-center gap-2 mb-3 flex-wrap">
                 <span className="text-muted small ms-1">اللون:</span>
@@ -306,7 +352,6 @@ const CarCard = ({ car, index }) => {
               </div>
             )}
 
-            {/* ── مواصفات ── */}
             <Row className="g-0 bg-light rounded py-3 mb-3 text-secondary border">
               <Col xs={4} className="border-start">
                 <FaUsers color="#fc8b1a" size={18} />
@@ -328,7 +373,6 @@ const CarCard = ({ car, index }) => {
               </Col>
             </Row>
 
-            {/* ── مميزات ── */}
             <div className="d-flex flex-wrap justify-content-center gap-2 mb-3">
               {car.features.map((f, i) => (
                 <Badge
@@ -342,7 +386,6 @@ const CarCard = ({ car, index }) => {
               ))}
             </div>
 
-            {/* ── الحد الأدنى للعمر ── */}
             <div
               className="rental-info-box mb-4 p-2 border rounded text-primary fw-bold small bg-light shadow-sm"
               style={{ borderStyle: "dashed", borderColor: "#0d6efd" }}
@@ -350,7 +393,6 @@ const CarCard = ({ car, index }) => {
               <FaIdCard className="me-1" /> الحد الأدنى للعمر: {car.minAge} سنة
             </div>
 
-            {/* ── زر واتساب ── */}
             <Button
               variant="success"
               href={`https://wa.me/+96590930061?text=أريد استفسار عن حجز ${car.name} موديل ${car.year} - اللون ${car.variants[selectedVariant].color}`}

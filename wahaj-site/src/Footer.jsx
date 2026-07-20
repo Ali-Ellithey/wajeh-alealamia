@@ -68,7 +68,7 @@ export const Footer = () => {
                 <FaWhatsapp />
               </a>
               <a
-                href="https://www.instagram.com/wahajcar2"
+                href="https://www.instagram.com/wahaj_global?utm_source=qr&igsh=em5lcDFnbThuem92"
                 target="_blank"
                 rel="noreferrer"
                 className="social-pill instagram"
@@ -117,8 +117,16 @@ export const Footer = () => {
             <div className="contact-item mb-3">
               <p className="mb-1 fw-bold">{t("our_location")}</p>
               <p className="opacity-75 small">
-                <FaMapMarkerAlt className="text-warning mx-2" />
-                {t("address_details")}
+                <a
+                  href="https://maps.app.goo.gl/2iACKBUu4azFAaRs5?g_st=awb"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white text-decoration-none" // يمكنك تغيير text-white للون المناسب لتصميمك
+                  style={{ cursor: "pointer" }}
+                >
+                  <FaMapMarkerAlt className="text-warning mx-2" />
+                  {t("address_details")}
+                </a>
               </p>
             </div>
             <div className="contact-item">

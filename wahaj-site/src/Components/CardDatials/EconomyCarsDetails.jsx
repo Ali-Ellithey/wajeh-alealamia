@@ -17,7 +17,6 @@ import HomeSidler from "@/Components/Home/HomeSidler";
 import hRV_Silver from "@/assets/EconomyCars/HR-v-salver.webp";
 import hRV_White from "@/assets/EconomyCars/HR-v-white.webp";
 import hRV_Blue from "@/assets/EconomyCars/HR-v-blue.webp";
-import changanCS35Plus_Black from "@/assets/EconomyCars/Changan-CS35-Plus-black.webp";
 import changanCS35Plus_Gray from "@/assets/EconomyCars/Changan-CS35-Plus-gray.webp";
 import changanCS35Plus_White from "@/assets/EconomyCars/Changan-CS35-Plus-white.webp";
 import tiggo7ProMax_Black from "@/assets/EconomyCars/Tiggo7ProMax-black.webp";
@@ -42,22 +41,14 @@ import tucson2025_Gray from "@/assets/EconomyCars/Tuson-gray2025.webp";
 import tucson2023_Blue from "@/assets/EconomyCars/Tucson-blue2023.webp";
 import tucson2023_White from "@/assets/EconomyCars/Tucson-white-2023.webp";
 import tucson2023_Gray from "@/assets/EconomyCars/tuson-2023.webp";
-import chrysler300_White from "@/assets/EconomyCars/Chrysler300-white.webp";
-import chrysler300_Black from "@/assets/EconomyCars/Chrysler300-black.webp";
-import chrysler300_Silver from "@/assets/EconomyCars/Chrysler300.webp";
-import jetour_White from "@/assets/EconomyCars/Jetour-white.webp";
-import jetour_Black from "@/assets/EconomyCars/Jetour-black.webp";
-import jetour_Silver from "@/assets/EconomyCars/JETOUR-salver.webp";
+
 import yaris_Silver from "@/assets/EconomyCars/Yaris-salver.webp";
 import yaris_Gray from "@/assets/EconomyCars/Yairs-gray.webp";
-import raize_Black from "@/assets/EconomyCars/Raize-black.webp";
 import raize_White from "@/assets/EconomyCars/Raize-white.webp";
-import camry_Gray from "@/assets/EconomyCars/Camry-gray.webp";
 import kia_K4_Silver from "@/assets/EconomyCars/k4-.webp";
 import kia_K4_Gray from "@/assets/EconomyCars/k4.webp";
 import kia_Pegas_White from "@/assets/EconomyCars/Pegas-white2024.webp";
 import kia_Pegas_Silver from "@/assets/EconomyCars/Pegas-salver2024.webp";
-import kia_Pegas_Blue from "@/assets/EconomyCars/Pegas-blue2024.webp";
 import kia_K5_Silver_2022 from "@/assets/EconomyCars/k5-salver2022.webp";
 import kia_K5_White_2022 from "@/assets/EconomyCars/k5-white2022.webp";
 import kia_K5_Black_2022 from "@/assets/EconomyCars/k5-black2022.webp";
@@ -73,18 +64,14 @@ import kia_Sportage_White from "@/assets/EconomyCars/Sp-white.webp";
 import kia_Sportage_Black_2025 from "@/assets/EconomyCars/sp-black2025.webp";
 import kia_Sportage_Gray_2025 from "@/assets/EconomyCars/sp-gray2025.webp";
 import kia_Sportage_White_2025 from "@/assets/EconomyCars/sp-white2025.webp";
-import camry_Silver from "@/assets/EconomyCars/Camry-salver.webp";
-import yaris_Silver2 from "@/assets/EconomyCars/Yaris-salver-.webp";
 import yaris_White from "@/assets/EconomyCars/Yaris-white.webp";
 import corollaCross from "@/assets/EconomyCars/Corolla-Cross.webp";
-import rav4_2025 from "@/assets/EconomyCars/RAV42025.webp";
-import urbanCruiser_Red from "@/assets/EconomyCars/Urban-Cruiser.webp";
-import rav4_Gray from "@/assets/EconomyCars/Rave4-gray.webp";
-import rav4_White from "@/assets/EconomyCars/Rave4-white.webp";
-import prado_Silver from "@/assets/EconomyCars/Prado.webp";
-import prado_White from "@/assets/EconomyCars/Prado-white.webp";
-import prado_Black from "@/assets/EconomyCars/prado-black.webp";
-import urbanCruiser_Black from "@/assets/EconomyCars/Urban-Cruiser-black.webp";
+import rav4w_2023 from "@/assets/EconomyCars/RAV42025.webp";
+import rav4_2023 from "@/assets/EconomyCars/ToyotaRAV4.webp";
+import rav4Salver from "@/assets/EconomyCars/Urban-Cruiser.webp";
+
+import nissanXtrailW from "@/assets/EconomyCars/nissanXtrailW.webp";
+import nissanXtrailB from "@/assets/EconomyCars/nissanXtrailB.webp";
 import urbanCruiser_Gray from "@/assets/EconomyCars/Urban-Cruiser-gray.webp";
 import urbanCruiser_White from "@/assets/EconomyCars/Urban-Cruiser-white.webp";
 import lexusES250_White from "@/assets/EconomyCars/Lexus-ES250-white.webp";
@@ -93,7 +80,32 @@ import lexusES250_Gray from "@/assets/EconomyCars/Lexus-ES250-gray.webp";
 import kiaSeltos_White from "@/assets/EconomyCars/Seltos-c2.webp";
 import kiaSeltos_Red from "@/assets/EconomyCars/Seltos-c1.webp";
 import kiaSeltos_Gray from "@/assets/EconomyCars/Seltos-c.webp";
+import bmwX2_white from "@/assets/EconomyCars/bmwX2_white.webp";
+import mercedesC200 from "@/assets/LuxCars/mercedesC200.webp";
 
+import territorygray from "@/assets/EconomyCars/Ford-Territory-Gray.webp";
+import territorywhite from "@/assets/EconomyCars/Ford-Territory-white.webp";
+import territoryblack from "@/assets/EconomyCars/Ford-Territory-black.webp";
+
+import fordGterritory26 from "@/assets/EconomyCars/FordGTerritory26.webp";
+import fordBterritory26 from "@/assets/EconomyCars/FordBTerritory26.webp";
+import fordWterritory26 from "@/assets/EconomyCars/FordwTerritory26.webp";
+import chrysler300c_Black from "@/assets/EconomyCars/Chrysler300-black.webp";
+import chrysler300c_Silver from "@/assets/EconomyCars/Chrysler300.webp";
+import chrysler300c_gray from "@/assets/EconomyCars/chrysler300c_gray.webp";
+import dodgecharger_Black from "@/assets/SportsCars/dodgecharger-Black.webp";
+import dodgecharger_Gray from "@/assets/SportsCars/dodgecharger-Gray.webp";
+import dodgecharger_White from "@/assets/SportsCars/dodgecharger-white.webp";
+
+import tototacamryS21 from "@/assets/EconomyCars/TOYOTACamryS21.webp";
+import tototacamryG21 from "@/assets/EconomyCars/TOYOTACamryG21.webp";
+import tototacamryB21 from "@/assets/EconomyCars/TOYOTACamryB21.webp";
+import tototacamryW21 from "@/assets/EconomyCars/TOYOTACamryW21.webp";
+
+import camrygold25 from "@/assets/EconomyCars/Camry-gold25.webp";
+import camryWhite25 from "@/assets/EconomyCars/Camry-White25.webp";
+import camrygray25 from "@/assets/EconomyCars/Camry-gray25.webp";
+import camryblack25 from "@/assets/EconomyCars/Camry-black25.webp";
 // ── خريطة الألوان (الاسم → كود اللون) ──────────────────
 const COLOR_MAP = {
   أبيض: "#FFFFFF",
@@ -106,7 +118,72 @@ const COLOR_MAP = {
 };
 
 // ── بيانات السيارات المجمّعة ──────────────────────────────
-const economyCarsGrouped = [
+// ✅ تم تصديرها (export) عشان تُستخدم في صفحة البراند الموحّدة BrandCars.jsx
+export const economyCarsGrouped = [
+  {
+    id: "bmw-x2-2025",
+    name: "BMW X2",
+    year: "2025",
+    specs: { passengers: 5, transmission: "أتوماتيك", engine: "I4 Turbo" },
+    features: [
+      "تصميم كوبيه رياضي",
+      "إضاءة داخلية تفاعلية",
+      "شاشة BMW المنحنية",
+    ],
+    minAge: 21,
+    variants: [{ color: "أبيض", image: bmwX2_white }],
+  },
+  {
+    id: "dodge-charger-2023",
+    name: "Dodge Charger",
+    year: "2023",
+    specs: { passengers: 5, transmission: "أتوماتيك", engine: "V6/V8" },
+    features: ["تصميم عضلي", "أداء قوي", "صوت عادم رياضي"],
+    minAge: 21,
+    variants: [
+      { color: "أسود", image: dodgecharger_Black },
+      { color: "رمادي", image: dodgecharger_Gray },
+      { color: "أبيض", image: dodgecharger_White },
+    ],
+  },
+  {
+    id: "ford-territory-2025",
+    name: "Ford Territory",
+    year: "2025",
+    specs: { passengers: 5, transmission: "أتوماتيك", engine: "Turbo" },
+    features: ["تصميم عصري", "مساحة عائلية", "اقتصادية في الاستهلاك"],
+    minAge: 21,
+    variants: [
+      { color: "أسود", image: territoryblack },
+      { color: "أبيض", image: territorywhite },
+      { color: "رمادي", image: territorygray },
+    ],
+  },
+  {
+    id: "nissan-xtrail-2024",
+    name: "Nissan X-Trail",
+    year: "2024",
+    specs: { passengers: 5, transmission: "أتوماتيك", engine: "Turbo" },
+    features: ["تصميم رياضي", "شاشة لمس", "اقتصادية في الاستهلاك"],
+    minAge: 21,
+    variants: [
+      { color: "رمادي", image: nissanXtrailB },
+      { color: "أبيض", image: nissanXtrailW },
+    ],
+  },
+  {
+    id: "ford-territory-2026",
+    name: "Ford Territory",
+    year: "2026",
+    specs: { passengers: 5, transmission: "أتوماتيك", engine: "Turbo" },
+    features: ["تصميم عصري", "مساحة عائلية", "اقتصادية في الاستهلاك"],
+    minAge: 21,
+    variants: [
+      { color: "رمادي", image: fordGterritory26 },
+      { color: "أسود", image: fordBterritory26 },
+      { color: "أبيض", image: fordWterritory26 },
+    ],
+  },
   {
     id: "hrv-2023",
     name: "Honda HR-V",
@@ -125,22 +202,43 @@ const economyCarsGrouped = [
     ],
   },
   {
-    id: "changan-cs35-2023",
+    id: "mercedes-c200-2021",
+    name: "Mercedes C200",
+    year: "2021",
+    specs: { passengers: 5, transmission: "أتوماتيك", engine: "Turbo 4" },
+    features: ["تصميم رياضي", "شاشة رقمية", "اقتصادية في الاستهلاك"],
+    minAge: 21,
+    variants: [{ color: "فضي", image: mercedesC200 }],
+  },
+  {
+    id: "chrysler300-2022",
+    name: "Chrysler 300c",
+    year: "2022",
+    specs: { passengers: 5, transmission: "أتوماتيك", engine: "V6/V8" },
+    features: ["سيدان فارهة", "تصميم أمريكي كلاسيكي", "محرك قوي"],
+    minAge: 21,
+    variants: [
+      { color: "أسود", image: chrysler300c_Black },
+      { color: "فضي", image: chrysler300c_Silver },
+      { color: "فضي", image: chrysler300c_gray },
+    ],
+  },
+  {
+    id: "changan-cs35-2025",
     name: "Changan CS35 Plus",
-    year: "2023",
+    year: "2025",
     specs: { passengers: 5, transmission: "أتوماتيك", engine: "1.4T" },
     features: ["تصميم رياضي", "تقنيات حديثة", "سعر منافس"],
     minAge: 21,
     variants: [
-      { color: "أسود", image: changanCS35Plus_Black },
       { color: "رمادي", image: changanCS35Plus_Gray },
       { color: "أبيض", image: changanCS35Plus_White },
     ],
   },
   {
-    id: "tiggo7-2023",
+    id: "tiggo7-2026",
     name: "Chery Tiggo 7 Pro Max",
-    year: "2023",
+    year: "2026",
     specs: { passengers: 5, transmission: "أتوماتيك", engine: "1.6T" },
     features: ["SUV فاخر", "شاشة بانورامية", "نظام أمان متقدم"],
     minAge: 21,
@@ -151,9 +249,9 @@ const economyCarsGrouped = [
     ],
   },
   {
-    id: "omoda5-2023",
+    id: "omoda5-2026",
     name: "Chery Omoda 5",
-    year: "2023",
+    year: "2026",
     specs: { passengers: 5, transmission: "أتوماتيك", engine: "1.6T" },
     features: ["تصميم كوبيه رياضي", "إضاءة LED", "مقصورة ذكية"],
     minAge: 21,
@@ -165,9 +263,9 @@ const economyCarsGrouped = [
     ],
   },
   {
-    id: "geely-emgrand-2023",
+    id: "geely-emgrand-2025",
     name: "Geely Emgrand",
-    year: "2023",
+    year: "2025",
     specs: { passengers: 5, transmission: "أتوماتيك", engine: "1.5L" },
     features: ["سيدان أنيقة", "اقتصادية في الوقود", "تقنيات السلامة الحديثة"],
     minAge: 21,
@@ -178,9 +276,9 @@ const economyCarsGrouped = [
     ],
   },
   {
-    id: "coolray-2023",
+    id: "coolray-2025",
     name: "Geely Coolray",
-    year: "2023",
+    year: "2025",
     specs: { passengers: 5, transmission: "أتوماتيك", engine: "1.5T" },
     features: ["كروس أوفر رياضي", "تصميم عصري جريء", "أداء قوي"],
     minAge: 21,
@@ -230,67 +328,39 @@ const economyCarsGrouped = [
     ],
   },
   {
-    id: "chrysler300-2023",
-    name: "Chrysler 300",
-    year: "2023",
-    specs: { passengers: 5, transmission: "أتوماتيك", engine: "V6/V8" },
-    features: ["سيدان فارهة", "تصميم أمريكي كلاسيكي", "محرك قوي"],
-    minAge: 21,
-    variants: [
-      { color: "أبيض", image: chrysler300_White },
-      { color: "أسود", image: chrysler300_Black },
-      { color: "فضي", image: chrysler300_Silver },
-    ],
-  },
-  {
-    id: "jetour-2024",
-    name: "Jetour T2",
-    year: "2024",
-    specs: { passengers: 5, transmission: "أتوماتيك", engine: "1.5T" },
-    features: ["تصميم مغامرات", "4x4 قوي", "مظهر عسكري أنيق"],
-    minAge: 21,
-    variants: [
-      { color: "أبيض", image: jetour_White },
-      { color: "أسود", image: jetour_Black },
-      { color: "فضي", image: jetour_Silver },
-    ],
-  },
-  {
-    id: "yaris-2024-a",
+    id: "yaris-2022-a",
     name: "Toyota Yaris",
-    year: "2024",
+    year: "2022",
     specs: { passengers: 5, transmission: "أتوماتيك", engine: "1.5L" },
     features: ["اقتصادية في الوقود", "سهلة القيادة", "موثوقة وعملية"],
     minAge: 21,
     variants: [
       { color: "فضي", image: yaris_Silver },
       { color: "رمادي", image: yaris_Gray },
-      { color: "فضي", image: yaris_Silver2 },
       { color: "أبيض", image: yaris_White },
     ],
   },
   {
-    id: "raize-2024",
+    id: "raize-2023",
     name: "Toyota Raize",
-    year: "2024",
+    year: "2023",
     specs: { passengers: 5, transmission: "أتوماتيك", engine: "1.0T" },
     features: ["كروس أوفر صغير", "اقتصادي", "تصميم شبابي"],
     minAge: 21,
-    variants: [
-      { color: "أسود", image: raize_Black },
-      { color: "أبيض", image: raize_White },
-    ],
+    variants: [{ color: "أبيض", image: raize_White }],
   },
   {
-    id: "camry-2024",
+    id: "camry-2021",
     name: "Toyota Camry",
-    year: "2024",
+    year: "2021",
     specs: { passengers: 5, transmission: "أتوماتيك", engine: "2.5L" },
     features: ["سيدان فارهة", "تقنية هايبرد", "راحة فائقة"],
     minAge: 21,
     variants: [
-      { color: "رمادي", image: camry_Gray },
-      { color: "فضي", image: camry_Silver },
+      { color: "أبيض", image: tototacamryW21 },
+      { color: "فضي", image: tototacamryS21 },
+      { color: "أسود", image: tototacamryB21 },
+      { color: "ذهبي", image: tototacamryG21 },
     ],
   },
   {
@@ -315,7 +385,20 @@ const economyCarsGrouped = [
     variants: [
       { color: "أبيض", image: kia_Pegas_White },
       { color: "فضي", image: kia_Pegas_Silver },
-      { color: "أزرق", image: kia_Pegas_Blue },
+    ],
+  },
+  {
+    id: "camry-2025",
+    name: "Toyota Camry",
+    year: "2025",
+    specs: { passengers: 5, transmission: "أتوماتيك", engine: "2.5L" },
+    features: ["سيدان فارهة", "تقنية هايبرد", "راحة فائقة"],
+    minAge: 21,
+    variants: [
+      { color: "أبيض", image: camryWhite25 },
+      { color: "فضي", image: camrygray25 },
+      { color: "أسود", image: camryblack25 },
+      { color: "ذهبي", image: camrygold25 },
     ],
   },
   {
@@ -345,9 +428,9 @@ const economyCarsGrouped = [
     ],
   },
   {
-    id: "kia-sportage-2024",
+    id: "kia-sportage-2023",
     name: "Kia Sportage",
-    year: "2024",
+    year: "2023",
     specs: { passengers: 5, transmission: "أتوماتيك", engine: "1.6T" },
     features: ["SUV عائلي فاخر", "تصميم جريء", "مساحة واسعة"],
     minAge: 21,
@@ -383,61 +466,35 @@ const economyCarsGrouped = [
     variants: [{ color: "أبيض", image: corollaCross }],
   },
   {
-    id: "rav4-2025",
+    id: "rav4-2023",
     name: "Toyota RAV4",
-    year: "2025",
+    year: "2023",
     specs: { passengers: 5, transmission: "أتوماتيك", engine: "2.5L" },
-    features: ["SUV عائلي قوي", "دفع رباعي", "تصميم 2025 المحدث"],
-    minAge: 21,
-    variants: [{ color: "أبيض", image: rav4_2025 }],
-  },
-  {
-    id: "rav4-2024",
-    name: "Toyota RAV4",
-    year: "2024",
-    specs: { passengers: 5, transmission: "أتوماتيك", engine: "2.5L" },
-    features: ["SUV عائلي قوي", "دفع رباعي", "مساحة واسعة"],
+    features: ["SUV عائلي قوي", "دفع رباعي", "تصميم 2023 المحدث"],
     minAge: 21,
     variants: [
-      { color: "رمادي", image: rav4_Gray },
-      { color: "أبيض", image: rav4_White },
+      { color: "أبيض", image: rav4w_2023 },
+      { color: "رمادي", image: rav4_2023 },
+      { color: "فضي", image: rav4Salver },
     ],
   },
-  {
-    id: "prado-2024",
-    name: "Toyota Land Cruiser Prado",
-    year: "2024",
-    specs: { passengers: 7, transmission: "أتوماتيك", engine: "2.8L Diesel" },
-    features: [
-      "SUV فاخر 7 مقاعد",
-      "قدرة على الطرق الوعرة",
-      "تصميم كلاسيكي أيقوني",
-    ],
-    minAge: 21,
-    variants: [
-      { color: "فضي", image: prado_Silver },
-      { color: "أبيض", image: prado_White },
-      { color: "أسود", image: prado_Black },
-    ],
-  },
+
   {
     id: "urban-cruiser-2024",
-    name: "Toyota Urban Cruiser",
+    name: "Toyota Urban",
     year: "2024",
     specs: { passengers: 5, transmission: "أتوماتيك", engine: "1.5L Hybrid" },
     features: ["كروس أوفر هايبرد", "تصميم شبابي عصري", "اقتصادي في المدينة"],
     minAge: 21,
     variants: [
-      { color: "أحمر", image: urbanCruiser_Red },
-      { color: "أسود", image: urbanCruiser_Black },
       { color: "رمادي", image: urbanCruiser_Gray },
       { color: "أبيض", image: urbanCruiser_White },
     ],
   },
   {
-    id: "lexus-es250-2024",
+    id: "lexus-es250-2023",
     name: "Lexus ES250",
-    year: "2024",
+    year: "2023",
     specs: { passengers: 5, transmission: "أتوماتيك", engine: "2.5L" },
     features: ["سيدان فاخرة", "راحة استثنائية", "تقنيات لكزس المتطورة"],
     minAge: 25,
@@ -476,7 +533,6 @@ const CarCard = ({ car, index }) => {
         whileHover={{ y: -8 }}
       >
         <Card className="shadow-sm border-0 h-100 car-card overflow-hidden">
-          {/* ── صورة السيارة ── */}
           <div
             className="position-relative"
             style={{ height: "230px", background: "#f8f9fa" }}
@@ -517,7 +573,6 @@ const CarCard = ({ car, index }) => {
               {car.name}
             </Card.Title>
 
-            {/* ── بلت الألوان ── */}
             {car.variants.length > 1 && (
               <div className="d-flex justify-content-center align-items-center gap-2 mb-3 flex-wrap">
                 <span className="text-muted small ms-1">اللون:</span>
@@ -555,7 +610,6 @@ const CarCard = ({ car, index }) => {
               </div>
             )}
 
-            {/* ── مواصفات ── */}
             <Row className="g-0 mb-3 bg-light p-2 rounded border">
               <Col xs={4} className="border-start small fw-bold">
                 <FaUsers color="#fc8b1a" className="d-block mx-auto mb-1" />
@@ -571,7 +625,6 @@ const CarCard = ({ car, index }) => {
               </Col>
             </Row>
 
-            {/* ── مميزات ── */}
             <div className="d-flex flex-wrap justify-content-center gap-2 mb-3">
               {car.features.map((f, i) => (
                 <Badge
@@ -585,7 +638,6 @@ const CarCard = ({ car, index }) => {
               ))}
             </div>
 
-            {/* ── معلومات الإيجار ── */}
             <div className="rental-info-box mb-4 p-2 border rounded bg-light shadow-inner">
               <div className="d-flex justify-content-around small text-muted mb-2 border-bottom pb-1">
                 <span>
@@ -604,7 +656,6 @@ const CarCard = ({ car, index }) => {
               </div>
             </div>
 
-            {/* ── زر واتساب ── */}
             <Button
               variant="success"
               href={`https://wa.me/+96590930061?text=مرحباً، أريد استئجار ${car.name} موديل ${car.year} - اللون ${car.variants[selectedVariant].color}`}

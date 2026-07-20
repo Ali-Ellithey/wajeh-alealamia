@@ -1190,3 +1190,70 @@ html {
     padding-bottom: 5px;
   }
 }
+/* حاوية تضمن ثبات الـ Navbar بالكامل مع الشريط المساعد */
+.fixed-top-wrapper {
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* تصميم شريط الموديلات المساعد */
+.brands-quick-bar {
+  background: #111422; /* لون داكن فخم متباين مع الـ Navbar */
+  padding: 6px 0;
+  border-top: 1px solid rgba(252, 139, 26, 0.15);
+}
+
+.quick-title {
+  color: #fc8b1a;
+  font-weight: bold;
+  font-size: 0.85rem;
+  margin-inline-end: 15px;
+  white-space: nowrap;
+}
+
+/* مسار التمرير الأفقي السحري على الموبايل */
+.quick-links-track {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+  scrollbar-width: none; /* إخفاء شريط التمرير الافتراضي في فايرفوكس */
+  width: 100%;
+  padding: 2px 0;
+}
+
+.quick-links-track::-webkit-scrollbar {
+  display: none; /* إخفاء شريط التمرير الافتراضي في كروم وسفاري */
+}
+
+/* تصميم روابط البراندات */
+.quick-brand-link {
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  white-space: nowrap;
+  padding: 2px 10px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.quick-brand-link:hover,
+.quick-brand-link.is-active {
+  color: #ffffff;
+  background: #fc8b1a; /* يضئ باللون البرتقالي عند التمرير أو الاختيار */
+}
+
+/* ضبط الهوامش على الموبايل لتوفير مساحة لمس مريحة */
+@media (max-width: 991px) {
+  .brands-quick-bar {
+    padding: 8px 0;
+  }
+  .quick-brand-link {
+    font-size: 0.8rem;
+    padding: 4px 12px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+}

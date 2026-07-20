@@ -9,15 +9,21 @@ const resources = {
             "home": "Home",
             "about_us": "About Us",
             "services": "Services",
-            "our_fleet": "Our Fleet",
+            "our_fleet": "The Fleet",
             "contact_us": "Contact Us",
-
             // --- General & Buttons ---
             "book_now": "Book Now",
             "details": "Details",
             "call_us": "Call Us",
             "whatsapp": "WhatsApp",
             "booking_message": "I would like to book",
+
+            "categories": "Categories",
+            "luxury_cars": "Luxury Cars",
+            "super_sport": "Super Sport",
+            "large_family": "Large Family",
+            "economy_cars": "Economy Cars",
+
 
             // --- Home Slider ---
             "slider": {
@@ -235,6 +241,12 @@ const resources = {
             "services": "خدماتنا",
             "our_fleet": "أسطولنا",
             "contact_us": "اتصل بنا",
+
+            "categories": "تصنيفات",
+            "luxury_cars": "سيارات فاخرة",
+            "super_sport": "سيارات رياضية",
+            "large_family": "عائلية كبيرة",
+            "economy_cars": "اقتصادية",
 
             // --- Home Slider ---
             "slider": {

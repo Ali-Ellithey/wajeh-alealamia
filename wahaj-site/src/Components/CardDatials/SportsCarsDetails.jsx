@@ -12,9 +12,7 @@ import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 
 import HomeSidler from "@/Components/Home/HomeSidler";
-import dodgecharger_Black from "@/assets/SportsCars/dodgecharger-Black.webp";
-import dodgecharger_Gray from "@/assets/SportsCars/dodgecharger-Gray.webp";
-import dodgecharger_White from "@/assets/SportsCars/dodgecharger-white.webp";
+
 import fiat500 from "@/assets/SportsCars/fiat500.webp";
 import fiat500_Black from "@/assets/SportsCars/fiat500-black.webp";
 import fiat500_White from "@/assets/SportsCars/fiat500-white.webp";
@@ -39,10 +37,13 @@ import mustang_Red from "@/assets/SportsCars/Mustang-Read.webp";
 import porsche911_Black from "@/assets/SportsCars/porschecarrera911-Black.webp";
 import porsche911_Blue from "@/assets/SportsCars/porschecarrera911-Blue.webp";
 import porsche911_White from "@/assets/SportsCars/porschecarrera911-white.webp";
-import chrysler300_White from "@/assets/EconomyCars/Chrysler300-white.webp";
-import chrysler300_Black from "@/assets/EconomyCars/Chrysler300-black.webp";
-import chrysler300_Silver from "@/assets/EconomyCars/Chrysler300.webp";
+import chrysler300s_White from "@/assets/EconomyCars/Chrysler300-white.webp";
+import mercedesAMG_Cla from "@/assets/LuxCars/mercedesAMG-Cla.webp";
+import porschecarrera from "@/assets/SportsCars/porschecarrera911-2026white.webp";
 
+import GMCSierra from "@/assets/SportsCars/GMCSierra23.webp";
+import PolarisSlingshoW23 from "@/assets/SportsCars/PolarisSlingshoW23.webp";
+import PolarisSlingshoB23 from "@/assets/SportsCars/PolarisSlingshoB23.webp";
 // ── خريطة الألوان ──────────────────────────────────────────
 const COLOR_MAP = {
   أبيض: "#FFFFFF",
@@ -56,19 +57,16 @@ const COLOR_MAP = {
 };
 
 // ── بيانات السيارات المجمّعة ────────────────────────────────
-const sportsCarsGrouped = [
+// ✅ تم تصديرها (export) عشان تُستخدم في صفحة البراند الموحّدة BrandCars.jsx
+export const sportsCarsGrouped = [
   {
-    id: "dodge-charger-2023",
-    name: "Dodge Charger",
+    id: "mercedes-cla-2023",
+    name: "Mercedes CLA-45s AMG",
     year: "2023",
-    specs: { passengers: 5, transmission: "أتوماتيك", engine: "V6/V8" },
-    features: ["تصميم عضلي", "أداء قوي", "صوت عادم رياضي"],
+    specs: { passengers: 5, transmission: "أتوماتيك", engine: "AMG Turbo" },
+    features: ["تصميم كوبيه", "جنوط AMG", "أداء رياضي"],
     minAge: 21,
-    variants: [
-      { color: "أسود", image: dodgecharger_Black },
-      { color: "رمادي", image: dodgecharger_Gray },
-      { color: "أبيض", image: dodgecharger_White },
-    ],
+    variants: [{ color: "أسود", image: mercedesAMG_Cla }],
   },
   {
     id: "fiat500c-2023",
@@ -81,6 +79,26 @@ const sportsCarsGrouped = [
       { color: "أحمر", image: fiat500 },
       { color: "أسود", image: fiat500_Black },
       { color: "أبيض", image: fiat500_White },
+    ],
+  },
+  {
+    id: "polaris-slingshot-2023",
+    name: "Polaris Slingshot",
+    year: "2023",
+    specs: {
+      passengers: 2,
+      transmission: "أتوماتيك / عادي",
+      engine: "2.0L ProStar",
+    },
+    features: [
+      "تصميم رياضي مكشوف بثلاث عجلات",
+      "أداء قوي وتسارع مذهل",
+      "تجربة قيادة فريدة ومثيرة",
+    ],
+    minAge: 25,
+    variants: [
+      { color: "أبيض", image: PolarisSlingshoW23 },
+      { color: "أسود", image: PolarisSlingshoB23 },
     ],
   },
   {
@@ -126,6 +144,19 @@ const sportsCarsGrouped = [
     variants: [{ color: "أسود", image: chevroletSilverado_Black }],
   },
   {
+    id: "gmc-sierra-2023",
+    name: "GMC Sierra",
+    year: "2023",
+    specs: { passengers: 5, transmission: "أتوماتيك", engine: "6.2L V8" },
+    features: [
+      "فخامة مطلقة وتصميم هجومي باللون الأسود",
+      "قوة سحب جبارة مخصصة للمهمات الصعبة",
+      "مقاطير داخلية فاخرة وتقنيات قيادة متطورة",
+    ],
+    minAge: 21,
+    variants: [{ color: "أسود", image: GMCSierra }],
+  },
+  {
     id: "silverado-2024",
     name: "Chevrolet Silverado",
     year: "2024",
@@ -148,7 +179,7 @@ const sportsCarsGrouped = [
   },
   {
     id: "mclaren-2022",
-    name: "McLaren R2",
+    name: "McLaren Artura",
     year: "2022",
     specs: { passengers: 2, transmission: "أتوماتيك", engine: "V8" },
     features: ["سوبر كار", "أداء سباقات", "تصميم مستقبلي"],
@@ -178,7 +209,7 @@ const sportsCarsGrouped = [
   },
   {
     id: "mustang-2023",
-    name: "Ford Mustang",
+    name: "Ford Mustang 5.0",
     year: "2023",
     specs: { passengers: 4, transmission: "أتوماتيك", engine: "V8" },
     features: ["تصميم عضلي", "أداء قوي", "صوت عادم رياضي"],
@@ -202,13 +233,25 @@ const sportsCarsGrouped = [
     ],
   },
   {
+    id: "porsche-911-2026",
+    name: "Porsche Carrera 911",
+    year: "2026",
+    specs: { passengers: 2, transmission: "أتوماتيك", engine: "6 سلندر" },
+    features: ["أيقونة السيارات الرياضية", "أداء ألماني دقيق", "تصميم خالد"],
+    minAge: 25,
+    variants: [{ color: "أبيض", image: porschecarrera }],
+  },
+  {
     id: "porsche-911-2025",
     name: "Porsche Carrera 911",
     year: "2025",
     specs: { passengers: 2, transmission: "أتوماتيك", engine: "6 سلندر" },
     features: ["أيقونة السيارات الرياضية", "أداء ألماني دقيق", "تصميم خالد"],
     minAge: 25,
-    variants: [{ color: "أسود", image: porsche911_Black }],
+    variants: [
+      { color: "أسود", image: porsche911_Black },
+      { color: "أبيض", image: porsche911_White },
+    ],
   },
   {
     id: "porsche-911-2023",
@@ -219,27 +262,15 @@ const sportsCarsGrouped = [
     minAge: 25,
     variants: [{ color: "أزرق", image: porsche911_Blue }],
   },
-  {
-    id: "porsche-911-2026",
-    name: "Porsche Carrera 911",
-    year: "2026",
-    specs: { passengers: 2, transmission: "أتوماتيك", engine: "6 سلندر" },
-    features: ["أيقونة السيارات الرياضية", "أداء ألماني دقيق", "تصميم خالد"],
-    minAge: 25,
-    variants: [{ color: "أبيض", image: porsche911_White }],
-  },
+
   {
     id: "chrysler300-2022",
-    name: "Chrysler 300",
+    name: "Chrysler 300s",
     year: "2022",
     specs: { passengers: 5, transmission: "أتوماتيك", engine: "V6/V8" },
     features: ["سيدان فارهة", "تصميم أمريكي كلاسيكي", "محرك قوي"],
     minAge: 21,
-    variants: [
-      { color: "أبيض", image: chrysler300_White },
-      { color: "أسود", image: chrysler300_Black },
-      { color: "فضي", image: chrysler300_Silver },
-    ],
+    variants: [{ color: "أبيض", image: chrysler300s_White }],
   },
 ];
 
