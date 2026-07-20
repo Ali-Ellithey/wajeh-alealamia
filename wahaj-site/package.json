@@ -6,7 +6,7 @@
   "homepage": "https://prime-code0.github.io/wahaj-alalamiah/",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "NODE_OPTIONS=--max-old-space-size=4096 vite build",
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
