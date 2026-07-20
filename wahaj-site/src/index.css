@@ -385,7 +385,7 @@ img {
   /* التعديل: مسار نسبي لضمان الظهور بعد الـ Build */
   background-image:
     linear-gradient(rgba(33, 39, 65, 0.7), rgba(33, 39, 65, 0.7)),
-    url("@/assets/Business.jpg");
+    url("@/assets/Business.webp");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -778,7 +778,7 @@ img {
 .ServicesHome {
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("/src/assets/servies.jpg");
+    url("/src/assets/servies.webp");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

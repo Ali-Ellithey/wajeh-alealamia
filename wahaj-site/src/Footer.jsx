@@ -13,7 +13,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
 // --- التصحيح: استيراد اللوجو مباشرة باستخدام الـ Alias الذي عرفناه في vite.config.js ---
-import Logo from "@/assets/logo.png";
+import Logo from "@/assets/logo.webp";
 
 export const Footer = () => {
   const { t, i18n } = useTranslation();

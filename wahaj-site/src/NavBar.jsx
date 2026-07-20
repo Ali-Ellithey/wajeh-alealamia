@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Container, Nav, Navbar, Button, NavDropdown } from "react-bootstrap";
 // تعديل الاستيراد لاستخدام الـ Alias
-import logo from "@/assets/logo.png";
+import logo from "@/assets/logo.webp";
 import { Link, useLocation } from "react-router-dom";
 import { HashLink as NavHashLink } from "react-router-hash-link";
 import { useTranslation } from "react-i18next";

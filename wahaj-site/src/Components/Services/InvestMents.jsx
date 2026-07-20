@@ -10,9 +10,9 @@ import {
   FaGavel,
 } from "react-icons/fa";
 
-import carRentalImg from "@/assets/carrant.jpg";
-import insuranceImg from "@/assets/Insurance.jpg";
-import legalImg from "@/assets/convenio.jpg";
+import carRentalImg from "@/assets/carrant.webp";
+import insuranceImg from "@/assets/Insurance.webp";
+import legalImg from "@/assets/convenio.webp";
 
 const TAB_ICONS = {
   rental: <FaCar size={18} />,

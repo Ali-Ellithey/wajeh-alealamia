@@ -4,8 +4,8 @@ import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 
 import imageServices from "@/assets/cover.webp";
-import servicesImage from "@/assets/servies.jpg";
-import imegEnd from "@/assets/personVip.jpg";
+import servicesImage from "@/assets/servies.webp";
+import imegEnd from "@/assets/personVip.webp";
 
 export const ServicesContent = () => {
   const { t, i18n } = useTranslation();

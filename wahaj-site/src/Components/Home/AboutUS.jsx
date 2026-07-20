@@ -6,8 +6,8 @@ import { useTranslation } from "react-i18next";
 // --- استيراد الصور مباشرة باستخدام الـ Alias لضمان عملها بعد الـ Build ---
 import luxuryImg from "@/assets/Lux.webp";
 import suvImg from "@/assets/sport1.webp";
-import airportImg from "@/assets/aitbotr.jpg";
-import vipImg from "@/assets/Driver.jpg";
+import airportImg from "@/assets/aitbotr.webp";
+import vipImg from "@/assets/Driver.webp";
 import familyImg from "@/assets/BagCar.webp";
 import economyImg from "@/assets/Suv.webp";
 

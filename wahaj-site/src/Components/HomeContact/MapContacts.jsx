@@ -1,40 +1,9 @@
 import React from "react";
 import Container from "react-bootstrap/esm/Container";
-import GoogleMapReact from "google-map-react";
 import { Zoom } from "react-awesome-reveal";
 
-// تصميم مخصص وشكل مميز للماركر (الدبوس) على الخريطة
-const AnyReactComponent = ({ text }) => (
-  <div
-    style={{
-      color: "white",
-      background: "#fc8b1a",
-      padding: "8px 12px",
-      display: "inline-flex",
-      textAlign: "center",
-      alignItems: "center",
-      justifyContent: "center",
-      borderRadius: "8px",
-      fontWeight: "bold",
-      boxShadow: "0 4px 10px rgba(0,0,0,0.3)",
-      transform: "translate(-50%, -100%)", // لتثبيت السهم في النقطة الصحيحة تماماً
-      whiteSpace: "nowrap",
-    }}
-  >
-    📍 {text}
-  </div>
-);
-
 export const MapContacts = () => {
-  // 👈 تم تعديل السنتر هنا ليكون داخل مدينة الكويت (منطقة شرق) مباشرة
-  const defaultProps = {
-    center: {
-      lat: 29.3826,
-      lng: 47.9888,
-    },
-    zoom: 15, // تم زيادة الزووم لتكون الخريطة قريبة وواضحة للمستخدم
-  };
-
+  // الرابط اللي بينقل المستخدم لتطبيق الخرائط مباشرة عند الضغط
   const mapUrl = "https://maps.app.goo.gl/2iACKBUu4azFAaRs5?g_st=awb";
 
   return (
@@ -47,19 +16,20 @@ export const MapContacts = () => {
               width: "100%",
               borderRadius: "12px",
               overflow: "hidden",
+              boxShadow: "0 4px 15px rgba(0,0,0,0.1)", // لمسة جمالية للخلفية
             }}
           >
-            <GoogleMapReact
-              bootstrapURLKeys={{ key: "" }}
-              defaultCenter={defaultProps.center}
-              defaultZoom={defaultProps.zoom}
-            >
-              <AnyReactComponent
-                lat={29.3826}
-                lng={47.9888}
-                text="شركة الوهج - شرق"
-              />
-            </GoogleMapReact>
+            {/* استخدام الـ iframe المجاني والسريع بديل للمكتبة المعطلة */}
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3478.33700010041!2d47.9862113!3d29.3826!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3fcf9ced733734e5%3A0x67dbbc8df0452309!2z2LTYsdmD2KnYjCDZg9mI2YrYqg!5e0!3m2!1sar!2skw!4v1721470000000!5md2"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="شركة الوهج - شرق"
+            ></iframe>
           </div>
         </Zoom>
 
