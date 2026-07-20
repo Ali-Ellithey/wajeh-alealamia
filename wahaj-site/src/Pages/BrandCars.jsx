@@ -4,10 +4,10 @@ import { Container, Row } from "react-bootstrap";
 import { motion } from "framer-motion";
 
 import HomeSidler from "@/Components/Home/HomeSidler";
-import CarCard from "@/Components/CardDatials/CarCard.jsx";
+import CarCard from "@/Components/CardDatials/CarCard";
 import { getBrandFromCarName, toSlug } from "@/utils/brandUtils";
 
-import { sportsCarsGrouped } from "@/Components/CardDatials/SportsCarsDetails.jsx";
+import { sportsCarsGrouped } from "@/Components/CardDatials/SportsCarsDetails";
 import { luxuryCarsGrouped } from "@/Components/CardDatials/LuxuryCarsDetails";
 import { familyCarsGrouped } from "@/Components/CardDatials/FamilyCarsDetails";
 import { economyCarsGrouped } from "@/Components/CardDatials/EconomyCarsDetails";
@@ -28,31 +28,15 @@ const BrandCars = () => {
     window.scrollTo(0, 0);
   }, [brandSlug]);
 
-  // 🛠️ الفلتر الشامل والذكي لحل مشاكل التداخل لـ (لاند روفر، رنج روفر، مرسيدس)
   const filteredCars = useMemo(() => {
     if (!brandSlug) return [];
 
-    // تحويل الـ slug القادم من الـ URL لشكل قياسي آمن ونظيف
+    // decodeURIComponent كحماية إضافية لو الرابط جه فيه ترميز غريب
     const cleanUrlSlug = toSlug(decodeURIComponent(brandSlug));
 
     return allCars.filter((car) => {
       if (!car || !car.name) return false;
-
-      const carBrandName = getBrandFromCarName(car.name);
-      const carSlug = toSlug(carBrandName);
-
-      // 🌟 أولاً: حل مشكلة عائلة الروفر (لو دايسين لاند روفر، اعرض لاند روفر ورنج روفر معاً)
-      if (cleanUrlSlug === "land-rover") {
-        return carSlug === "land-rover" || carSlug === "range-rover";
-      }
-
-      // 🌟 ثانياً: حل مشكلة المرسيدس (لو الرابط فيه mercedes أو mercedes-benz يعرض المرسيدس فوراً)
-      if (cleanUrlSlug === "mercedes" || cleanUrlSlug === "mercedes-benz") {
-        return carSlug === "mercedes-benz" || carSlug === "mercedes";
-      }
-
-      // لباقي الماركات (شيفروليه، بي إم دبليو، تويوتا...) مطابقة عادية ومباشرة
-      return carSlug === cleanUrlSlug;
+      return toSlug(getBrandFromCarName(car.name)) === cleanUrlSlug;
     });
   }, [brandSlug]);
 
@@ -77,7 +61,7 @@ const BrandCars = () => {
             className="display-5 fw-bold"
             style={{ color: "#212741", textTransform: "capitalize" }}
           >
-            {displayBrandName}
+            سيارات {displayBrandName}
           </h2>
           <div
             className="mx-auto mt-2"
@@ -89,8 +73,7 @@ const BrandCars = () => {
             }}
           ></div>
           <p className="text-muted mt-3 fs-5">
-            <span className="fw-bold" style={{ color: "#fc8b1a" }}></span>
-            حيث تبدأ الرفاهية وتكتمل متعة القيادة.
+            كل سياراتنا المتاحة من {displayBrandName} في مكان واحد
           </p>
         </Container>
       </motion.div>
@@ -99,10 +82,6 @@ const BrandCars = () => {
         {filteredCars.length > 0 ? (
           <Row className="g-4">
             {filteredCars.map((car, index) => (
-              /* 
-                ✔️ التعديل هنا: قمنا بتغيير الـ key ليدمج الـ id مع الـ index 
-                ليصبح فريداً تماماً حتى لو تكررت نفس السيارة في مصفوفات مختلفة.
-              */
               <CarCard
                 key={`${car.id || index}-${index}`}
                 car={car}
